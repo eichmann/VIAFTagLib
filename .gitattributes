@@ -108,6 +108,5 @@ src/non-packaged-resources/schema.rdf -text
 src/non-packaged-resources/skos-owl1-dl.rdf -text
 src/non-packaged-resources/thing.owl -text
 src/non-packaged-resources/viaf.owl -text
-src/non-packaged-resourcesontology.statistics -text
 src/test/java/edu/uiowa/slis/VIAFTagLib/README.txt -text
 src/test/resources/README.txt -text
