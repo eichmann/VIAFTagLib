@@ -1,0 +1,140 @@
+classes
+http://www.w3.org/2004/02/skos/core#Concept	45720207
+http://www.w3.org/2006/gen/ont#InformationResource	31394903
+http://xmlns.com/foaf/0.1/Document	31394903
+http://schema.org/Person	17203394
+http://www.wikidata.org/entity/Q1387388	10401843
+http://schema.org/CreativeWork	3929646
+http://schema.org/Organization	3910778
+http://bibliograph.net/Agent	2026824
+http://schema.org/Place	840696
+http://www.productontology.org/id/Pseudonym	3713
+properties
+http://www.w3.org/1999/02/22-rdf-syntax-ns#type	146826907
+http://www.w3.org/2004/02/skos/core#prefLabel	83850728
+http://www.w3.org/2004/02/skos/core#inScheme	51342546
+http://schema.org/name	48325983
+http://xmlns.com/foaf/0.1/focus	46213505
+http://www.w3.org/2004/02/skos/core#altLabel	42491473
+http://www.w3.org/2000/01/rdf-schema#comment	36429055
+http://schema.org/sameAs	33897446
+http://purl.org/dc/terms/identifier	31394903
+http://rdfs.org/ns/void#inDataset	31394903
+http://xmlns.com/foaf/0.1/primaryTopic	31394903
+http://schema.org/alternateName	30298654
+http://schema.org/givenName	11704841
+http://www.w3.org/2002/07/owl#differentFrom	11244676
+http://schema.org/familyName	10103147
+http://schema.org/birthDate	7670519
+http://schema.org/workExample	3525461
+http://schema.org/creator	3365165
+http://schema.org/author	3132498
+http://schema.org/deathDate	2684251
+http://schema.org/url	2600744
+http://schema.org/gender	2492042
+http://www.w3.org/1999/02/22-rdf-syntax-ns#value	1652500
+http://schema.org/exampleOfWork	1517849
+http://schema.org/inLanguage	1431695
+http://schema.org/dateCreated	1268408
+http://schema.org/description	1163615
+http://bibliograph.net/translator	669188
+http://schema.org/location	327582
+http://purl.org/dc/terms/language	74242
+property types
+http://www.w3.org/2004/02/skos/core#Concept	http://xmlns.com/foaf/0.1/focus	http://schema.org/Person	34174010
+http://www.w3.org/2004/02/skos/core#Concept	http://xmlns.com/foaf/0.1/focus	http://schema.org/Organization	5340416
+http://www.w3.org/2004/02/skos/core#Concept	http://xmlns.com/foaf/0.1/focus	http://schema.org/CreativeWork	4225752
+http://www.w3.org/2004/02/skos/core#Concept	http://xmlns.com/foaf/0.1/focus	http://schema.org/Place	929584
+http://schema.org/Person	http://xmlns.com/foaf/0.1/focus	http://www.w3.org/2004/02/skos/core#Concept	344593
+http://schema.org/Organization	http://xmlns.com/foaf/0.1/focus	http://www.w3.org/2004/02/skos/core#Concept	95323
+http://schema.org/CreativeWork	http://xmlns.com/foaf/0.1/focus	http://www.w3.org/2004/02/skos/core#Concept	46963
+http://www.w3.org/2004/02/skos/core#Concept	http://xmlns.com/foaf/0.1/focus	http://www.productontology.org/id/Pseudonym	20574
+http://schema.org/Place	http://xmlns.com/foaf/0.1/focus	http://www.w3.org/2004/02/skos/core#Concept	8606
+http://www.productontology.org/id/Pseudonym	http://xmlns.com/foaf/0.1/focus	http://www.w3.org/2004/02/skos/core#Concept	157
+http://www.w3.org/2006/gen/ont#InformationResource	http://xmlns.com/foaf/0.1/primaryTopic	http://schema.org/Person	17203394
+http://xmlns.com/foaf/0.1/Document	http://xmlns.com/foaf/0.1/primaryTopic	http://schema.org/Person	17203394
+http://www.w3.org/2006/gen/ont#InformationResource	http://xmlns.com/foaf/0.1/primaryTopic	http://www.wikidata.org/entity/Q1387388	4779504
+http://xmlns.com/foaf/0.1/Document	http://xmlns.com/foaf/0.1/primaryTopic	http://www.wikidata.org/entity/Q1387388	4779504
+http://www.w3.org/2006/gen/ont#InformationResource	http://xmlns.com/foaf/0.1/primaryTopic	http://schema.org/CreativeWork	3929646
+http://xmlns.com/foaf/0.1/Document	http://xmlns.com/foaf/0.1/primaryTopic	http://schema.org/CreativeWork	3929646
+http://www.w3.org/2006/gen/ont#InformationResource	http://xmlns.com/foaf/0.1/primaryTopic	http://schema.org/Organization	3910778
+http://xmlns.com/foaf/0.1/Document	http://xmlns.com/foaf/0.1/primaryTopic	http://schema.org/Organization	3910778
+http://www.w3.org/2006/gen/ont#InformationResource	http://xmlns.com/foaf/0.1/primaryTopic	http://schema.org/Place	513114
+http://xmlns.com/foaf/0.1/Document	http://xmlns.com/foaf/0.1/primaryTopic	http://schema.org/Place	513114
+http://www.w3.org/2006/gen/ont#InformationResource	http://xmlns.com/foaf/0.1/primaryTopic	http://www.productontology.org/id/Pseudonym	3713
+http://xmlns.com/foaf/0.1/Document	http://xmlns.com/foaf/0.1/primaryTopic	http://www.productontology.org/id/Pseudonym	3713
+http://www.wikidata.org/entity/Q1387388	http://www.w3.org/2002/07/owl#differentFrom	http://www.wikidata.org/entity/Q1387388	4779504
+http://www.wikidata.org/entity/Q1387388	http://www.w3.org/2002/07/owl#differentFrom	http://schema.org/Person	842835
+http://www.wikidata.org/entity/Q1387388	http://www.w3.org/2002/07/owl#differentFrom	http://www.productontology.org/id/Pseudonym	225
+http://www.wikidata.org/entity/Q1387388	http://www.w3.org/2002/07/owl#differentFrom	http://schema.org/Organization	16
+http://www.wikidata.org/entity/Q1387388	http://www.w3.org/2002/07/owl#differentFrom	http://schema.org/CreativeWork	12
+http://www.wikidata.org/entity/Q1387388	http://www.w3.org/2002/07/owl#differentFrom	http://schema.org/Place	2
+http://schema.org/CreativeWork	http://schema.org/workExample	http://schema.org/CreativeWork	1518748
+http://schema.org/CreativeWork	http://schema.org/workExample	http://www.productontology.org/id/Pseudonym	542
+http://www.productontology.org/id/Pseudonym	http://schema.org/workExample	http://schema.org/CreativeWork	145
+http://www.productontology.org/id/Pseudonym	http://schema.org/workExample	http://www.productontology.org/id/Pseudonym	122
+http://schema.org/CreativeWork	http://schema.org/workExample	http://schema.org/Person	68
+http://schema.org/Person	http://schema.org/workExample	http://schema.org/CreativeWork	67
+http://schema.org/Place	http://schema.org/workExample	http://schema.org/CreativeWork	8
+http://schema.org/Organization	http://schema.org/workExample	http://schema.org/CreativeWork	2
+http://schema.org/CreativeWork	http://schema.org/workExample	http://schema.org/Organization	2
+http://schema.org/Organization	http://schema.org/workExample	http://schema.org/Organization	1
+http://schema.org/Person	http://schema.org/workExample	http://schema.org/Person	1
+http://schema.org/CreativeWork	http://schema.org/workExample	http://schema.org/Place	1
+http://schema.org/CreativeWork	http://schema.org/creator	http://schema.org/Person	1884631
+http://schema.org/CreativeWork	http://schema.org/creator	http://bibliograph.net/Agent	1357636
+http://schema.org/CreativeWork	http://schema.org/creator	http://www.productontology.org/id/Pseudonym	15421
+http://schema.org/CreativeWork	http://schema.org/creator	http://www.wikidata.org/entity/Q1387388	1187
+http://schema.org/CreativeWork	http://schema.org/creator	http://schema.org/Organization	886
+http://www.productontology.org/id/Pseudonym	http://schema.org/creator	http://schema.org/Person	613
+http://schema.org/CreativeWork	http://schema.org/creator	http://schema.org/CreativeWork	361
+http://schema.org/Person	http://schema.org/creator	http://bibliograph.net/Agent	204
+http://www.productontology.org/id/Pseudonym	http://schema.org/creator	http://bibliograph.net/Agent	64
+http://www.productontology.org/id/Pseudonym	http://schema.org/creator	http://www.productontology.org/id/Pseudonym	37
+http://schema.org/Place	http://schema.org/creator	http://bibliograph.net/Agent	21
+http://www.productontology.org/id/Pseudonym	http://schema.org/creator	http://schema.org/Organization	19
+http://schema.org/Person	http://schema.org/creator	http://schema.org/Person	17
+http://schema.org/Organization	http://schema.org/creator	http://bibliograph.net/Agent	16
+http://schema.org/CreativeWork	http://schema.org/creator	http://schema.org/Place	15
+http://schema.org/Person	http://schema.org/creator	http://schema.org/CreativeWork	7
+http://schema.org/Place	http://schema.org/creator	http://schema.org/Person	1
+http://schema.org/CreativeWork	http://schema.org/author	http://schema.org/Person	2897416
+http://schema.org/CreativeWork	http://schema.org/author	http://schema.org/Organization	218809
+http://schema.org/CreativeWork	http://schema.org/author	http://schema.org/Place	23413
+http://schema.org/CreativeWork	http://schema.org/author	http://www.productontology.org/id/Pseudonym	20233
+http://schema.org/CreativeWork	http://schema.org/author	http://www.wikidata.org/entity/Q1387388	12968
+http://schema.org/CreativeWork	http://schema.org/author	http://schema.org/CreativeWork	765
+http://www.productontology.org/id/Pseudonym	http://schema.org/author	http://schema.org/Person	671
+http://www.productontology.org/id/Pseudonym	http://schema.org/author	http://www.productontology.org/id/Pseudonym	66
+http://schema.org/Organization	http://schema.org/author	http://schema.org/Organization	61
+http://schema.org/Person	http://schema.org/author	http://schema.org/Person	61
+http://www.productontology.org/id/Pseudonym	http://schema.org/author	http://schema.org/Organization	18
+http://schema.org/Place	http://schema.org/author	http://schema.org/Person	7
+http://schema.org/Organization	http://schema.org/author	http://schema.org/Place	6
+http://schema.org/Person	http://schema.org/author	http://schema.org/Organization	3
+http://schema.org/Place	http://schema.org/author	http://schema.org/Organization	2
+http://schema.org/Person	http://schema.org/author	http://schema.org/CreativeWork	1
+http://schema.org/Organization	http://schema.org/author	http://schema.org/Person	1
+http://schema.org/Place	http://schema.org/author	http://schema.org/Place	1
+http://schema.org/CreativeWork	http://schema.org/exampleOfWork	http://schema.org/CreativeWork	1516263
+http://www.productontology.org/id/Pseudonym	http://schema.org/exampleOfWork	http://schema.org/CreativeWork	541
+http://schema.org/CreativeWork	http://schema.org/exampleOfWork	http://www.productontology.org/id/Pseudonym	145
+http://schema.org/CreativeWork	http://schema.org/exampleOfWork	http://schema.org/Person	142
+http://www.productontology.org/id/Pseudonym	http://schema.org/exampleOfWork	http://www.productontology.org/id/Pseudonym	122
+http://schema.org/Person	http://schema.org/exampleOfWork	http://schema.org/CreativeWork	10
+http://schema.org/CreativeWork	http://schema.org/exampleOfWork	http://schema.org/Place	8
+http://schema.org/Person	http://schema.org/exampleOfWork	http://schema.org/Person	2
+http://schema.org/Organization	http://schema.org/exampleOfWork	http://schema.org/CreativeWork	1
+http://schema.org/Place	http://schema.org/exampleOfWork	http://schema.org/CreativeWork	1
+http://schema.org/CreativeWork	http://schema.org/exampleOfWork	http://schema.org/Organization	1
+http://schema.org/Organization	http://schema.org/exampleOfWork	http://schema.org/Organization	1
+http://schema.org/CreativeWork	http://bibliograph.net/translator	http://bibliograph.net/Agent	669087
+http://www.productontology.org/id/Pseudonym	http://bibliograph.net/translator	http://bibliograph.net/Agent	238
+http://schema.org/Person	http://bibliograph.net/translator	http://bibliograph.net/Agent	7
+http://schema.org/Organization	http://bibliograph.net/translator	http://bibliograph.net/Agent	1
+http://schema.org/Place	http://bibliograph.net/translator	http://bibliograph.net/Agent	1
+http://schema.org/Place	http://schema.org/location	http://schema.org/Place	183926
+http://schema.org/Organization	http://schema.org/location	http://schema.org/Place	161246
+http://schema.org/Person	http://schema.org/location	http://schema.org/Place	23
+http://schema.org/CreativeWork	http://schema.org/location	http://schema.org/Place	2
+http://www.productontology.org/id/Pseudonym	http://schema.org/location	http://schema.org/Place	1

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:schemax="http://topbraid.org/schemax/"
+    xmlns:schema="http://schema.org/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xml:base="http://topbraid.org/schema/">
+    
+    <owl:Ontology rdf:about="http://schema.org/">
+    </owl:Ontology>
+
+        <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing">
+            <rdfs:label xml:lang="en">Thing</rdfs:label>
+            <rdfs:comment xml:lang="en">The most generic type of item. </rdfs:comment>
+        </owl:Class>
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/name">
+        <rdfs:label xml:lang="en">name</rdfs:label>
+        <rdfs:comment xml:lang="en">The name of the item.</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+     </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/description">
+        <rdfs:label xml:lang="en">description</rdfs:label>
+        <rdfs:comment xml:lang="en">A short description of the item.</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:DatatypeProperty>
+    
+ </rdf:RDF>    
+ 
