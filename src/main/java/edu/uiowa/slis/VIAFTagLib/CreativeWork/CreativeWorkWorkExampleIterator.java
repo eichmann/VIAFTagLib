@@ -71,6 +71,8 @@ public class CreativeWorkWorkExampleIterator extends edu.uiowa.slis.VIAFTagLib.T
 				QuerySolution sol = rs.nextSolution();
 				workExample = sol.get("?s").toString();
 				type = getLocalName(sol.get("?t").toString());
+				if (type == null)
+					continue;
 				if (classFilter == null || (classFilter != null && type != null && classFilter.containsKey(type))) {
 					log.info("instance: " + workExample + "	type: " + type);
 					return EVAL_BODY_AGAIN;

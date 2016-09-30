@@ -71,6 +71,8 @@ public class CreativeWorkWorkExampleInverseIterator extends edu.uiowa.slis.VIAFT
 				QuerySolution sol = rs.nextSolution();
 				workExampleInverse = sol.get("?s").toString();
 				type = getLocalName(sol.get("?t").toString());
+				if (type == null)
+					continue;
 				if (classFilter == null || (classFilter != null && type != null && classFilter.containsKey(type))) {
 					log.info("instance: " + workExampleInverse + "	type: " + type);
 					return EVAL_BODY_AGAIN;

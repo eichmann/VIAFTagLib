@@ -77,10 +77,10 @@ public class TagLibSupport extends javax.servlet.jsp.tagext.TagSupport {
 		classNameHash.put("http://schema.org/MobilePhoneStore", "MobilePhoneStore");
 		classNameHash.put("http://schema.org/PaymentCard", "PaymentCard");
 		classNameHash.put("http://schema.org/FindAction", "FindAction");
-		classNameHash.put("http://schema.org/CableOrSatelliteService", "CableOrSatelliteService");
 		classNameHash.put("http://schema.org/GovernmentBuilding", "GovernmentBuilding");
 		classNameHash.put("http://schema.org/WPSideBar", "WPSideBar");
 		classNameHash.put("http://schema.org/BefriendAction", "BefriendAction");
+		classNameHash.put("http://schema.org/CableOrSatelliteService", "CableOrSatelliteService");
 		classNameHash.put("http://schema.org/Organization", "Organization");
 		classNameHash.put("http://schema.org/RsvpAction", "RsvpAction");
 		classNameHash.put("http://schema.org/DeliveryEvent", "DeliveryEvent");
@@ -671,10 +671,10 @@ public class TagLibSupport extends javax.servlet.jsp.tagext.TagSupport {
 		classLocalNameHash.put("MobilePhoneStore", "http://schema.org/MobilePhoneStore");
 		classLocalNameHash.put("PaymentCard", "http://schema.org/PaymentCard");
 		classLocalNameHash.put("FindAction", "http://schema.org/FindAction");
-		classLocalNameHash.put("CableOrSatelliteService", "http://schema.org/CableOrSatelliteService");
 		classLocalNameHash.put("GovernmentBuilding", "http://schema.org/GovernmentBuilding");
 		classLocalNameHash.put("WPSideBar", "http://schema.org/WPSideBar");
 		classLocalNameHash.put("BefriendAction", "http://schema.org/BefriendAction");
+		classLocalNameHash.put("CableOrSatelliteService", "http://schema.org/CableOrSatelliteService");
 		classLocalNameHash.put("Organization", "http://schema.org/Organization");
 		classLocalNameHash.put("RsvpAction", "http://schema.org/RsvpAction");
 		classLocalNameHash.put("DeliveryEvent", "http://schema.org/DeliveryEvent");

@@ -71,6 +71,8 @@ public class PersonAuthorInverseIterator extends edu.uiowa.slis.VIAFTagLib.TagLi
 				QuerySolution sol = rs.nextSolution();
 				authorInverse = sol.get("?s").toString();
 				type = getLocalName(sol.get("?t").toString());
+				if (type == null)
+					continue;
 				if (classFilter == null || (classFilter != null && type != null && classFilter.containsKey(type))) {
 					log.info("instance: " + authorInverse + "	type: " + type);
 					return EVAL_BODY_AGAIN;
