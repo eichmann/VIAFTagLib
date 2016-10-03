@@ -176,9 +176,9 @@ public class TagLibSupport extends javax.servlet.jsp.tagext.TagSupport {
 		classNameHash.put("http://schema.org/ItemList", "ItemList");
 		classNameHash.put("http://schema.org/OpeningHoursSpecification", "OpeningHoursSpecification");
 		classNameHash.put("http://schema.org/TypeAndQuantityNode", "TypeAndQuantityNode");
+		classNameHash.put("http://schema.org/MeetingRoom", "MeetingRoom");
 		classNameHash.put("http://schema.org/TattooParlor", "TattooParlor");
 		classNameHash.put("http://schema.org/Plumber", "Plumber");
-		classNameHash.put("http://schema.org/MeetingRoom", "MeetingRoom");
 		classNameHash.put("http://schema.org/Festival", "Festival");
 		classNameHash.put("http://schema.org/RadioChannel", "RadioChannel");
 		classNameHash.put("http://schema.org/FoodEstablishment", "FoodEstablishment");
@@ -233,6 +233,7 @@ public class TagLibSupport extends javax.servlet.jsp.tagext.TagSupport {
 		classNameHash.put("http://schema.org/SportsEvent", "SportsEvent");
 		classNameHash.put("http://schema.org/FoodService", "FoodService");
 		classNameHash.put("http://schema.org/Integer", "Integer");
+		classNameHash.put("http://www.w3.org/2002/07/owl#Nothing", "Nothing");
 		classNameHash.put("http://schema.org/LeaveAction", "LeaveAction");
 		classNameHash.put("http://schema.org/ProgramMembership", "ProgramMembership");
 		classNameHash.put("http://schema.org/PaymentService", "PaymentService");
@@ -770,9 +771,9 @@ public class TagLibSupport extends javax.servlet.jsp.tagext.TagSupport {
 		classLocalNameHash.put("ItemList", "http://schema.org/ItemList");
 		classLocalNameHash.put("OpeningHoursSpecification", "http://schema.org/OpeningHoursSpecification");
 		classLocalNameHash.put("TypeAndQuantityNode", "http://schema.org/TypeAndQuantityNode");
+		classLocalNameHash.put("MeetingRoom", "http://schema.org/MeetingRoom");
 		classLocalNameHash.put("TattooParlor", "http://schema.org/TattooParlor");
 		classLocalNameHash.put("Plumber", "http://schema.org/Plumber");
-		classLocalNameHash.put("MeetingRoom", "http://schema.org/MeetingRoom");
 		classLocalNameHash.put("Festival", "http://schema.org/Festival");
 		classLocalNameHash.put("RadioChannel", "http://schema.org/RadioChannel");
 		classLocalNameHash.put("FoodEstablishment", "http://schema.org/FoodEstablishment");
@@ -827,6 +828,7 @@ public class TagLibSupport extends javax.servlet.jsp.tagext.TagSupport {
 		classLocalNameHash.put("SportsEvent", "http://schema.org/SportsEvent");
 		classLocalNameHash.put("FoodService", "http://schema.org/FoodService");
 		classLocalNameHash.put("Integer", "http://schema.org/Integer");
+		classLocalNameHash.put("Nothing", "http://www.w3.org/2002/07/owl#Nothing");
 		classLocalNameHash.put("LeaveAction", "http://schema.org/LeaveAction");
 		classLocalNameHash.put("ProgramMembership", "http://schema.org/ProgramMembership");
 		classLocalNameHash.put("PaymentService", "http://schema.org/PaymentService");

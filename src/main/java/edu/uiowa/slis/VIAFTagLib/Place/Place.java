@@ -33,6 +33,16 @@ public class Place extends edu.uiowa.slis.VIAFTagLib.TagLibSupport {
 				label = thePlaceIterator.getLabel();
 			}
 
+			if (this.getParent() instanceof edu.uiowa.slis.VIAFTagLib.Organization.OrganizationLocationIterator) {
+				subjectURI = ((edu.uiowa.slis.VIAFTagLib.Organization.OrganizationLocationIterator)this.getParent()).getLocation();
+			}
+
+			edu.uiowa.slis.VIAFTagLib.Organization.OrganizationLocationIterator theOrganizationLocationIterator = (edu.uiowa.slis.VIAFTagLib.Organization.OrganizationLocationIterator) findAncestorWithClass(this, edu.uiowa.slis.VIAFTagLib.Organization.OrganizationLocationIterator.class);
+
+			if (subjectURI == null && theOrganizationLocationIterator != null) {
+				subjectURI = theOrganizationLocationIterator.getLocation();
+			}
+
 			if (thePlaceIterator == null && subjectURI == null) {
 				throw new JspException("subject URI generation currently not supported");
 			} else {
