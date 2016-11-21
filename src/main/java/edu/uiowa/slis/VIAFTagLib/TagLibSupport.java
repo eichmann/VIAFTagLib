@@ -1223,13 +1223,13 @@ public class TagLibSupport extends javax.servlet.jsp.tagext.TagSupport {
 
 	Dataset dataset = null;
 
-	protected ResultSet getResultSet(String queryString) {
+	public ResultSet getResultSet(String queryString) {
 		if (useSPARQL) {
 			Query theClassQuery = QueryFactory.create(queryString, Syntax.syntaxARQ);
 			QueryExecution theClassExecution = QueryExecutionFactory.sparqlService(endpoint, theClassQuery);
 			return theClassExecution.execSelect();
 		} else {
-			dataset = TDBFactory.createDataset("/Users/eichmann/Documents/Components/viaf");
+			dataset = TDBFactory.createDataset("/Volumes/LD4L/viaf");
 			Query query = QueryFactory.create(queryString, Syntax.syntaxARQ);
 			QueryExecution qexec = QueryExecutionFactory.create(query, dataset);
 			return qexec.execSelect();

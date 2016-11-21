@@ -97,6 +97,7 @@ src/main/java/edu/uiowa/slis/VIAFTagLib/Place/PlaceSameAs.java -text
 src/main/java/edu/uiowa/slis/VIAFTagLib/Place/PlaceSameAsIterator.java -text
 src/main/java/edu/uiowa/slis/VIAFTagLib/Place/PlaceSubjectURI.java -text
 src/main/java/edu/uiowa/slis/VIAFTagLib/TagLibSupport.java -text
+src/main/java/edu/uiowa/slis/VIAFTagLib/utility/Indexer.java -text
 src/main/java/edu/uiowa/slis/VIAFTagLib/utility/SPARQL.java -text
 src/main/java/edu/uiowa/slis/VIAFTagLib/utility/SPARQLObject.java -text
 src/main/java/edu/uiowa/slis/VIAFTagLib/utility/SPARQLPredicate.java -text
