@@ -20,9 +20,6 @@ public class Place extends edu.uiowa.slis.VIAFTagLib.TagLibSupport {
 	String label = null;
 	boolean commitNeeded = false;
 
-	// functional datatype properties, both local and inherited
-
-
 	public int doStartTag() throws JspException {
 		currentInstance = this;
 		try {
@@ -33,29 +30,58 @@ public class Place extends edu.uiowa.slis.VIAFTagLib.TagLibSupport {
 				label = thePlaceIterator.getLabel();
 			}
 
-			if (this.getParent() instanceof edu.uiowa.slis.VIAFTagLib.Organization.OrganizationLocationIterator) {
-				subjectURI = ((edu.uiowa.slis.VIAFTagLib.Organization.OrganizationLocationIterator)this.getParent()).getLocation();
-			}
-
-			edu.uiowa.slis.VIAFTagLib.Organization.OrganizationLocationIterator theOrganizationLocationIterator = (edu.uiowa.slis.VIAFTagLib.Organization.OrganizationLocationIterator) findAncestorWithClass(this, edu.uiowa.slis.VIAFTagLib.Organization.OrganizationLocationIterator.class);
-
-			if (subjectURI == null && theOrganizationLocationIterator != null) {
-				subjectURI = theOrganizationLocationIterator.getLocation();
-			}
+//			if (this.getParent() instanceof edu.uiowa.slis.VIAFTagLib.Action.ActionLocationIterator) {
+//				subjectURI = ((edu.uiowa.slis.VIAFTagLib.Action.ActionLocationIterator)this.getParent()).getLocation();
+//			}
+//
+//			if (this.getParent() instanceof edu.uiowa.slis.VIAFTagLib.Event.EventLocationIterator) {
+//				subjectURI = ((edu.uiowa.slis.VIAFTagLib.Event.EventLocationIterator)this.getParent()).getLocation();
+//			}
+//
+//			if (this.getParent() instanceof edu.uiowa.slis.VIAFTagLib.Organization.OrganizationLocationIterator) {
+//				subjectURI = ((edu.uiowa.slis.VIAFTagLib.Organization.OrganizationLocationIterator)this.getParent()).getLocation();
+//			}
+//
+//			edu.uiowa.slis.VIAFTagLib.Action.ActionLocationIterator theActionLocationIterator = (edu.uiowa.slis.VIAFTagLib.Action.ActionLocationIterator) findAncestorWithClass(this, edu.uiowa.slis.VIAFTagLib.Action.ActionLocationIterator.class);
+//
+//			if (subjectURI == null && theActionLocationIterator != null) {
+//				subjectURI = theActionLocationIterator.getLocation();
+//			}
+//
+//			edu.uiowa.slis.VIAFTagLib.Event.EventLocationIterator theEventLocationIterator = (edu.uiowa.slis.VIAFTagLib.Event.EventLocationIterator) findAncestorWithClass(this, edu.uiowa.slis.VIAFTagLib.Event.EventLocationIterator.class);
+//
+//			if (subjectURI == null && theEventLocationIterator != null) {
+//				subjectURI = theEventLocationIterator.getLocation();
+//			}
+//
+//			edu.uiowa.slis.VIAFTagLib.Organization.OrganizationLocationIterator theOrganizationLocationIterator = (edu.uiowa.slis.VIAFTagLib.Organization.OrganizationLocationIterator) findAncestorWithClass(this, edu.uiowa.slis.VIAFTagLib.Organization.OrganizationLocationIterator.class);
+//
+//			if (subjectURI == null && theOrganizationLocationIterator != null) {
+//				subjectURI = theOrganizationLocationIterator.getLocation();
+//			}
 
 			if (thePlaceIterator == null && subjectURI == null) {
 				throw new JspException("subject URI generation currently not supported");
 			} else {
 				ResultSet rs = getResultSet(prefix
-				+ " SELECT ?label ?foafName ?schemaName ?rdfValue  where {"
-				+ "  OPTIONAL { <" + subjectURI + "> rdfs:label ?label } "
+				+ " SELECT ?labelUS ?labelENG ?label ?labelANY ?foafName ?schemaName ?rdfValue  where {"
+				+ "  OPTIONAL { SELECT ?labelUS  WHERE { <" + subjectURI + "> rdfs:label ?labelUS  FILTER (lang(?labelUS) = \"en-US\")}    LIMIT 1 } "
+				+ "  OPTIONAL { SELECT ?labelENG WHERE { <" + subjectURI + "> rdfs:label ?labelENG FILTER (langMatches(?labelENG,\"en\"))} LIMIT 1 } "
+				+ "  OPTIONAL { SELECT ?label    WHERE { <" + subjectURI + "> rdfs:label ?label    FILTER (lang(?label) = \"\")}           LIMIT 1 } "
+				+ "  OPTIONAL { SELECT ?labelANY WHERE { <" + subjectURI + "> rdfs:label ?labelANY FILTER (lang(?labelANY) != \"\")}       LIMIT 1 } "
 				+ "  OPTIONAL { <" + subjectURI + "> <http://xmlns.com/foaf/0.1/name> ?foafName } "
 				+ "  OPTIONAL { <" + subjectURI + "> <http://schema.org/name> ?schemaName } "
 				+ "  OPTIONAL { <" + subjectURI + "> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> ?rdfValue } "
 				+ "}");
 				while(rs.hasNext()) {
 					QuerySolution sol = rs.nextSolution();
-					label = sol.get("?label") == null ? null : sol.get("?label").asLiteral().getString();
+					label = sol.get("?labelUS") == null ? null : sol.get("?labelUS").asLiteral().getString();
+					if (label == null)
+						label = sol.get("?labelENG") == null ? null : sol.get("?labelENG").asLiteral().getString();
+					if (label == null)
+						label = sol.get("?label") == null ? null : sol.get("?label").asLiteral().getString();
+					if (label == null)
+						label = sol.get("?labelANY") == null ? null : sol.get("?labelANY").asLiteral().getString();
 					if (label == null)
 						label = sol.get("?foafName") == null ? null : sol.get("?foafName").asLiteral().getString();
 					if (label == null)

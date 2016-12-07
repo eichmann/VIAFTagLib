@@ -111,42 +111,6 @@
 	</tag>
 
 	<tag>
-		<name>foreachOrganizationDescriptionIterator</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationDescriptionIterator</tag-class>
-		<body-content>JSP</body-content>
-	</tag>
-
-	<tag>
-		<name>OrganizationDescription</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationDescription</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>description</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>foreachOrganizationNameIterator</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationNameIterator</tag-class>
-		<body-content>JSP</body-content>
-	</tag>
-
-	<tag>
-		<name>OrganizationName</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationName</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>name</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
 		<name>foreachOrganizationAuthorInverseIterator</name>
 		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationAuthorInverseIterator</tag-class>
 		<body-content>JSP</body-content>
@@ -297,42 +261,6 @@
 	</tag>
 
 	<tag>
-		<name>foreachPlaceDescriptionIterator</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceDescriptionIterator</tag-class>
-		<body-content>JSP</body-content>
-	</tag>
-
-	<tag>
-		<name>PlaceDescription</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceDescription</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>description</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>foreachPlaceNameIterator</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceNameIterator</tag-class>
-		<body-content>JSP</body-content>
-	</tag>
-
-	<tag>
-		<name>PlaceName</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceName</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>name</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
 		<name>Person</name>
 		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.Person</tag-class>
 		<body-content>JSP</body-content>
@@ -477,42 +405,6 @@
 
 		<attribute>
 			<name>sameAs</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>foreachPersonDescriptionIterator</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonDescriptionIterator</tag-class>
-		<body-content>JSP</body-content>
-	</tag>
-
-	<tag>
-		<name>PersonDescription</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonDescription</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>description</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>foreachPersonNameIterator</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonNameIterator</tag-class>
-		<body-content>JSP</body-content>
-	</tag>
-
-	<tag>
-		<name>PersonName</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonName</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>name</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
@@ -825,42 +717,6 @@
 
 		<attribute>
 			<name>sameAs</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>foreachCreativeWorkDescriptionIterator</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkDescriptionIterator</tag-class>
-		<body-content>JSP</body-content>
-	</tag>
-
-	<tag>
-		<name>CreativeWorkDescription</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkDescription</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>description</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>foreachCreativeWorkNameIterator</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkNameIterator</tag-class>
-		<body-content>JSP</body-content>
-	</tag>
-
-	<tag>
-		<name>CreativeWorkName</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkName</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>name</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
