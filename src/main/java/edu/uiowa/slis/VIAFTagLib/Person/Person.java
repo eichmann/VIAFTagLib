@@ -37,17 +37,9 @@ public class Person extends edu.uiowa.slis.VIAFTagLib.TagLibSupport {
 				subjectURI = ((edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthorIterator)this.getParent()).getAuthor();
 			}
 
-//			if (this.getParent() instanceof edu.uiowa.slis.VIAFTagLib.Rating.RatingAuthorIterator) {
-//				subjectURI = ((edu.uiowa.slis.VIAFTagLib.Rating.RatingAuthorIterator)this.getParent()).getAuthor();
-//			}
-
 			if (this.getParent() instanceof edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkCreatorIterator) {
 				subjectURI = ((edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkCreatorIterator)this.getParent()).getCreator();
 			}
-
-//			if (this.getParent() instanceof edu.uiowa.slis.VIAFTagLib.UserComments.UserCommentsCreatorIterator) {
-//				subjectURI = ((edu.uiowa.slis.VIAFTagLib.UserComments.UserCommentsCreatorIterator)this.getParent()).getCreator();
-//			}
 
 			edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthorIterator theCreativeWorkAuthorIterator = (edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthorIterator) findAncestorWithClass(this, edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthorIterator.class);
 
@@ -55,23 +47,11 @@ public class Person extends edu.uiowa.slis.VIAFTagLib.TagLibSupport {
 				subjectURI = theCreativeWorkAuthorIterator.getAuthor();
 			}
 
-//			edu.uiowa.slis.VIAFTagLib.Rating.RatingAuthorIterator theRatingAuthorIterator = (edu.uiowa.slis.VIAFTagLib.Rating.RatingAuthorIterator) findAncestorWithClass(this, edu.uiowa.slis.VIAFTagLib.Rating.RatingAuthorIterator.class);
-//
-//			if (subjectURI == null && theRatingAuthorIterator != null) {
-//				subjectURI = theRatingAuthorIterator.getAuthor();
-//			}
-
 			edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkCreatorIterator theCreativeWorkCreatorIterator = (edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkCreatorIterator) findAncestorWithClass(this, edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkCreatorIterator.class);
 
 			if (subjectURI == null && theCreativeWorkCreatorIterator != null) {
 				subjectURI = theCreativeWorkCreatorIterator.getCreator();
 			}
-
-//			edu.uiowa.slis.VIAFTagLib.UserComments.UserCommentsCreatorIterator theUserCommentsCreatorIterator = (edu.uiowa.slis.VIAFTagLib.UserComments.UserCommentsCreatorIterator) findAncestorWithClass(this, edu.uiowa.slis.VIAFTagLib.UserComments.UserCommentsCreatorIterator.class);
-//
-//			if (subjectURI == null && theUserCommentsCreatorIterator != null) {
-//				subjectURI = theUserCommentsCreatorIterator.getCreator();
-//			}
 
 			if (thePersonIterator == null && subjectURI == null) {
 				throw new JspException("subject URI generation currently not supported");

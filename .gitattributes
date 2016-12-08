@@ -25,6 +25,8 @@ src/main/java/edu/uiowa/slis/VIAFTagLib/CreativeWork/CreativeWorkExampleOfWorkIn
 src/main/java/edu/uiowa/slis/VIAFTagLib/CreativeWork/CreativeWorkExampleOfWorkInverseType.java -text
 src/main/java/edu/uiowa/slis/VIAFTagLib/CreativeWork/CreativeWorkExampleOfWorkIterator.java -text
 src/main/java/edu/uiowa/slis/VIAFTagLib/CreativeWork/CreativeWorkExampleOfWorkType.java -text
+src/main/java/edu/uiowa/slis/VIAFTagLib/CreativeWork/CreativeWorkInLanguage.java -text
+src/main/java/edu/uiowa/slis/VIAFTagLib/CreativeWork/CreativeWorkInLanguageIterator.java -text
 src/main/java/edu/uiowa/slis/VIAFTagLib/CreativeWork/CreativeWorkIterator.java -text
 src/main/java/edu/uiowa/slis/VIAFTagLib/CreativeWork/CreativeWorkLabel.java -text
 src/main/java/edu/uiowa/slis/VIAFTagLib/CreativeWork/CreativeWorkSameAs.java -text

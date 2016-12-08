@@ -30,28 +30,8 @@ public class Place extends edu.uiowa.slis.VIAFTagLib.TagLibSupport {
 				label = thePlaceIterator.getLabel();
 			}
 
-//			if (this.getParent() instanceof edu.uiowa.slis.VIAFTagLib.Action.ActionLocationIterator) {
-//				subjectURI = ((edu.uiowa.slis.VIAFTagLib.Action.ActionLocationIterator)this.getParent()).getLocation();
-//			}
-//
-//			if (this.getParent() instanceof edu.uiowa.slis.VIAFTagLib.Event.EventLocationIterator) {
-//				subjectURI = ((edu.uiowa.slis.VIAFTagLib.Event.EventLocationIterator)this.getParent()).getLocation();
-//			}
-//
 //			if (this.getParent() instanceof edu.uiowa.slis.VIAFTagLib.Organization.OrganizationLocationIterator) {
 //				subjectURI = ((edu.uiowa.slis.VIAFTagLib.Organization.OrganizationLocationIterator)this.getParent()).getLocation();
-//			}
-//
-//			edu.uiowa.slis.VIAFTagLib.Action.ActionLocationIterator theActionLocationIterator = (edu.uiowa.slis.VIAFTagLib.Action.ActionLocationIterator) findAncestorWithClass(this, edu.uiowa.slis.VIAFTagLib.Action.ActionLocationIterator.class);
-//
-//			if (subjectURI == null && theActionLocationIterator != null) {
-//				subjectURI = theActionLocationIterator.getLocation();
-//			}
-//
-//			edu.uiowa.slis.VIAFTagLib.Event.EventLocationIterator theEventLocationIterator = (edu.uiowa.slis.VIAFTagLib.Event.EventLocationIterator) findAncestorWithClass(this, edu.uiowa.slis.VIAFTagLib.Event.EventLocationIterator.class);
-//
-//			if (subjectURI == null && theEventLocationIterator != null) {
-//				subjectURI = theEventLocationIterator.getLocation();
 //			}
 //
 //			edu.uiowa.slis.VIAFTagLib.Organization.OrganizationLocationIterator theOrganizationLocationIterator = (edu.uiowa.slis.VIAFTagLib.Organization.OrganizationLocationIterator) findAncestorWithClass(this, edu.uiowa.slis.VIAFTagLib.Organization.OrganizationLocationIterator.class);

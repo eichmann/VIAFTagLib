@@ -525,6 +525,24 @@
 	</tag>
 
 	<tag>
+		<name>foreachCreativeWorkInLanguageIterator</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkInLanguageIterator</tag-class>
+		<body-content>JSP</body-content>
+	</tag>
+
+	<tag>
+		<name>CreativeWorkInLanguage</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkInLanguage</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>inLanguage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
 		<name>foreachCreativeWorkAuthorIterator</name>
 		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthorIterator</tag-class>
 		<body-content>JSP</body-content>
