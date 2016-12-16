@@ -303,6 +303,24 @@
 	</tag>
 
 	<tag>
+		<name>foreachPersonGenderIterator</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonGenderIterator</tag-class>
+		<body-content>JSP</body-content>
+	</tag>
+
+	<tag>
+		<name>PersonGender</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonGender</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>gender</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
 		<name>foreachPersonBirthDateIterator</name>
 		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonBirthDateIterator</tag-class>
 		<body-content>JSP</body-content>

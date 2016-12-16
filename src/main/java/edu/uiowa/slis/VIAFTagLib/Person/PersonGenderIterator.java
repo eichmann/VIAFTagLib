@@ -10,30 +10,31 @@ import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
 
 @SuppressWarnings("serial")
-public class PersonIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSupport {
-	static PersonIterator currentInstance = null;
-	private static final Log log = LogFactory.getLog(PersonIterator.class);
+public class PersonGenderIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSupport {
+	static PersonGenderIterator currentInstance = null;
+	private static final Log log = LogFactory.getLog(PersonGenderIterator.class);
 
 	String subjectURI = null;
-	String label = null;
+	String gender = null;
 	ResultSet rs = null;
 
 	public int doStartTag() throws JspException {
 		currentInstance = this;
 		try {
-			rs = getResultSet(prefix+
-					" SELECT ?s ?lab where { "+
-					"  ?s rdf:type <http://schema.org/Person> . "+
-					"  OPTIONAL { ?s rdfs:label ?labelUS  FILTER (lang(?labelUS) = \"en-US\") } "+
-					"  OPTIONAL { ?s rdfs:label ?labelENG FILTER (langMatches(?labelENG,\"en\")) } "+
-					"  OPTIONAL { ?s rdfs:label ?label    FILTER (lang(?label) = \"\") } "+
-					"  OPTIONAL { ?s rdfs:label ?labelANY FILTER (lang(?labelANY) != \"\") } "+
-					"  BIND(COALESCE(?labelUS, ?labelENG, ?label, ?labelANY) as ?lab) "+
-					"} LIMIT 1000");
+			Person ancestorInstance = (Person) findAncestorWithClass(this, Person.class);
+
+			if (ancestorInstance != null) {
+				subjectURI = ancestorInstance.getSubjectURI();
+			}
+
+			if (ancestorInstance == null && subjectURI == null) {
+				throw new JspException("subject URI generation currently not supported");
+			}
+
+			rs = getResultSet(prefix+"SELECT ?s where { <" + subjectURI + "> <http://schema.org/gender> ?s } ");
 			if(rs.hasNext()) {
 				QuerySolution sol = rs.nextSolution();
-				subjectURI = sol.get("?s").toString();
-				label = sol.get("?lab") == null ? null : sol.get("?lab").asLiteral().getString();
+				gender = sol.get("?s").toString();
 				return EVAL_BODY_INCLUDE;
 			}
 		} catch (Exception e) {
@@ -50,8 +51,7 @@ public class PersonIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSupport {
 		try {
 			if(rs.hasNext()) {
 				QuerySolution sol = rs.nextSolution();
-				subjectURI = sol.get("?s").toString();
-				label = sol.get("?lab") == null ? null : sol.get("?lab").toString();
+				gender = sol.get("?s").toString();
 				return EVAL_BODY_AGAIN;
 			}
 		} catch (Exception e) {
@@ -81,23 +81,14 @@ public class PersonIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSupport {
 
 	private void clearServiceState() {
 		subjectURI = null;
-		label = null;
 	}
 
-	public void setSubjectURI(String subjectURI) {
-		this.subjectURI = subjectURI;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
-	public String getSubjectURI() {
-		return subjectURI;
-	}
-
-	public void setLabel(String label) {
-		this.label = label;
-	}
-
-	public String getLabel() {
-		return label;
+	public String getGender() {
+		return gender;
 	}
 
 }

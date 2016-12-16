@@ -67,6 +67,8 @@ src/main/java/edu/uiowa/slis/VIAFTagLib/Person/PersonDeathDate.java -text
 src/main/java/edu/uiowa/slis/VIAFTagLib/Person/PersonDeathDateIterator.java -text
 src/main/java/edu/uiowa/slis/VIAFTagLib/Person/PersonFamilyName.java -text
 src/main/java/edu/uiowa/slis/VIAFTagLib/Person/PersonFamilyNameIterator.java -text
+src/main/java/edu/uiowa/slis/VIAFTagLib/Person/PersonGender.java -text
+src/main/java/edu/uiowa/slis/VIAFTagLib/Person/PersonGenderIterator.java -text
 src/main/java/edu/uiowa/slis/VIAFTagLib/Person/PersonGivenName.java -text
 src/main/java/edu/uiowa/slis/VIAFTagLib/Person/PersonGivenNameIterator.java -text
 src/main/java/edu/uiowa/slis/VIAFTagLib/Person/PersonIterator.java -text

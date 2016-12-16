@@ -23,7 +23,6 @@ http://rdfs.org/ns/void#inDataset	31394903
 http://xmlns.com/foaf/0.1/primaryTopic	31394903
 http://schema.org/alternateName	30298654
 http://schema.org/givenName	11704841
-http://www.w3.org/2002/07/owl#differentFrom	11244676
 http://schema.org/familyName	10103147
 http://schema.org/birthDate	7670519
 http://schema.org/workExample	3525461
@@ -63,12 +62,6 @@ http://www.w3.org/2006/gen/ont#InformationResource	http://xmlns.com/foaf/0.1/pri
 http://xmlns.com/foaf/0.1/Document	http://xmlns.com/foaf/0.1/primaryTopic	http://schema.org/Place	513114
 http://www.w3.org/2006/gen/ont#InformationResource	http://xmlns.com/foaf/0.1/primaryTopic	http://www.productontology.org/id/Pseudonym	3713
 http://xmlns.com/foaf/0.1/Document	http://xmlns.com/foaf/0.1/primaryTopic	http://www.productontology.org/id/Pseudonym	3713
-http://www.wikidata.org/entity/Q1387388	http://www.w3.org/2002/07/owl#differentFrom	http://www.wikidata.org/entity/Q1387388	4779504
-http://www.wikidata.org/entity/Q1387388	http://www.w3.org/2002/07/owl#differentFrom	http://schema.org/Person	842835
-http://www.wikidata.org/entity/Q1387388	http://www.w3.org/2002/07/owl#differentFrom	http://www.productontology.org/id/Pseudonym	225
-http://www.wikidata.org/entity/Q1387388	http://www.w3.org/2002/07/owl#differentFrom	http://schema.org/Organization	16
-http://www.wikidata.org/entity/Q1387388	http://www.w3.org/2002/07/owl#differentFrom	http://schema.org/CreativeWork	12
-http://www.wikidata.org/entity/Q1387388	http://www.w3.org/2002/07/owl#differentFrom	http://schema.org/Place	2
 http://schema.org/CreativeWork	http://schema.org/workExample	http://schema.org/CreativeWork	1518748
 http://schema.org/CreativeWork	http://schema.org/workExample	http://www.productontology.org/id/Pseudonym	542
 http://www.productontology.org/id/Pseudonym	http://schema.org/workExample	http://schema.org/CreativeWork	145
@@ -247,14 +240,9 @@ http://bibliograph.net/Agent	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	htt
 http://schema.org/CreativeWork	http://schema.org/sameAs	http://www.w3.org/2001/XMLSchema#anyURI	1837898
 http://schema.org/Place	http://schema.org/sameAs	http://www.w3.org/2001/XMLSchema#anyURI	1007897
 http://schema.org/Place	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2001/XMLSchema#anyURI	901101
-http://schema.org/Person	http://www.w3.org/2002/07/owl#differentFrom	http://www.w3.org/2001/XMLSchema#anyURI	842835
 http://www.productontology.org/id/Pseudonym	http://schema.org/sameAs	http://www.w3.org/2001/XMLSchema#anyURI	11173
 http://www.productontology.org/id/Pseudonym	http://www.w3.org/1999/02/22-rdf-syntax-ns#type	http://www.w3.org/2001/XMLSchema#anyURI	7428
 http://www.productontology.org/id/Pseudonym	http://schema.org/gender	http://www.w3.org/2001/XMLSchema#anyURI	521
 http://schema.org/Organization	http://schema.org/gender	http://www.w3.org/2001/XMLSchema#anyURI	373
 http://schema.org/CreativeWork	http://schema.org/gender	http://www.w3.org/2001/XMLSchema#anyURI	332
-http://www.productontology.org/id/Pseudonym	http://www.w3.org/2002/07/owl#differentFrom	http://www.w3.org/2001/XMLSchema#anyURI	225
-http://schema.org/Organization	http://www.w3.org/2002/07/owl#differentFrom	http://www.w3.org/2001/XMLSchema#anyURI	16
-http://schema.org/CreativeWork	http://www.w3.org/2002/07/owl#differentFrom	http://www.w3.org/2001/XMLSchema#anyURI	12
 http://schema.org/Place	http://schema.org/gender	http://www.w3.org/2001/XMLSchema#anyURI	11
-http://schema.org/Place	http://www.w3.org/2002/07/owl#differentFrom	http://www.w3.org/2001/XMLSchema#anyURI	2

@@ -22,23 +22,18 @@ public class PlaceIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSupport {
 		currentInstance = this;
 		try {
 			rs = getResultSet(prefix+
-					" SELECT ?s ?labelUS ?labelENG ?label ?labelANY where { "+
+					" SELECT ?s ?lab where { "+
 					"  ?s rdf:type <http://schema.org/Place> . "+
-					"  OPTIONAL { SELECT ?labelUS  WHERE { ?s rdfs:label ?labelUS  FILTER (lang(?labelUS) = \"en-US\")}    LIMIT 1 } "+
-					"  OPTIONAL { SELECT ?labelENG WHERE { ?s rdfs:label ?labelENG FILTER (langMatches(?labelENG,\"en\"))} LIMIT 1 } "+
-					"  OPTIONAL { SELECT ?label    WHERE { ?s rdfs:label ?label    FILTER (lang(?label) = \"\")}           LIMIT 1 } "+
-					"  OPTIONAL { SELECT ?labelANY WHERE { ?s rdfs:label ?labelANY FILTER (lang(?labelANY) != \"\")}       LIMIT 1 } "+
+					"  OPTIONAL { ?s rdfs:label ?labelUS  FILTER (lang(?labelUS) = \"en-US\") } "+
+					"  OPTIONAL { ?s rdfs:label ?labelENG FILTER (langMatches(?labelENG,\"en\")) } "+
+					"  OPTIONAL { ?s rdfs:label ?label    FILTER (lang(?label) = \"\") } "+
+					"  OPTIONAL { ?s rdfs:label ?labelANY FILTER (lang(?labelANY) != \"\") } "+
+					"  BIND(COALESCE(?labelUS, ?labelENG, ?label, ?labelANY) as ?lab) "+
 					"} LIMIT 1000");
 			if(rs.hasNext()) {
 				QuerySolution sol = rs.nextSolution();
 				subjectURI = sol.get("?s").toString();
-				label = sol.get("?labelUS") == null ? null : sol.get("?labelUS").asLiteral().getString();
-				if (label == null)
-					label = sol.get("?labelENG") == null ? null : sol.get("?labelENG").asLiteral().getString();
-				if (label == null)
-					label = sol.get("?label") == null ? null : sol.get("?label").asLiteral().getString();
-				if (label == null)
-					label = sol.get("?labelANY") == null ? null : sol.get("?labelANY").asLiteral().getString();
+				label = sol.get("?lab") == null ? null : sol.get("?lab").asLiteral().getString();
 				return EVAL_BODY_INCLUDE;
 			}
 		} catch (Exception e) {
@@ -56,7 +51,7 @@ public class PlaceIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSupport {
 			if(rs.hasNext()) {
 				QuerySolution sol = rs.nextSolution();
 				subjectURI = sol.get("?s").toString();
-				label = sol.get("?l") == null ? null : sol.get("?l").toString();
+				label = sol.get("?lab") == null ? null : sol.get("?lab").toString();
 				return EVAL_BODY_AGAIN;
 			}
 		} catch (Exception e) {
