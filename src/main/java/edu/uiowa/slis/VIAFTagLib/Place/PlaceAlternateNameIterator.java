@@ -14,6 +14,9 @@ public class PlaceAlternateNameIterator extends edu.uiowa.slis.VIAFTagLib.TagLib
 	static PlaceAlternateNameIterator currentInstance = null;
 	private static final Log log = LogFactory.getLog(PlaceAlternateNameIterator.class);
 
+	static boolean firstInstance = false;
+	static boolean lastInstance = false;
+
 	String subjectURI = null;
 	String alternateName = null;
 	ResultSet rs = null;
@@ -35,6 +38,8 @@ public class PlaceAlternateNameIterator extends edu.uiowa.slis.VIAFTagLib.TagLib
 			if(rs.hasNext()) {
 				QuerySolution sol = rs.nextSolution();
 				alternateName = sol.get("?s").toString();
+				firstInstance = true;
+				lastInstance = ! rs.hasNext();
 				return EVAL_BODY_INCLUDE;
 			}
 		} catch (Exception e) {
@@ -52,6 +57,8 @@ public class PlaceAlternateNameIterator extends edu.uiowa.slis.VIAFTagLib.TagLib
 			if(rs.hasNext()) {
 				QuerySolution sol = rs.nextSolution();
 				alternateName = sol.get("?s").toString();
+				firstInstance = false;
+				lastInstance = ! rs.hasNext();
 				return EVAL_BODY_AGAIN;
 			}
 		} catch (Exception e) {
@@ -83,12 +90,28 @@ public class PlaceAlternateNameIterator extends edu.uiowa.slis.VIAFTagLib.TagLib
 		subjectURI = null;
 	}
 
-	public void setAlternateName(String alternateName) {
-		this.alternateName = alternateName;
+	public  void setAlternateName(String theAlternateName) {
+		alternateName = theAlternateName;
 	}
 
-	public String getAlternateName() {
+	public  String getAlternateName() {
 		return alternateName;
+	}
+
+	public static void setFirstInstance(Boolean theFirstInstance) {
+		firstInstance = theFirstInstance;
+	}
+
+	public static Boolean getFirstInstance() {
+		return firstInstance;
+	}
+
+	public static void setLastInstance(Boolean theLastInstance) {
+		lastInstance = theLastInstance;
+	}
+
+	public static Boolean getLastInstance() {
+		return lastInstance;
 	}
 
 }

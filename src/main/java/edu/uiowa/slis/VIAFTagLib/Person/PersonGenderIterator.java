@@ -14,6 +14,9 @@ public class PersonGenderIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSuppor
 	static PersonGenderIterator currentInstance = null;
 	private static final Log log = LogFactory.getLog(PersonGenderIterator.class);
 
+	static boolean firstInstance = false;
+	static boolean lastInstance = false;
+
 	String subjectURI = null;
 	String gender = null;
 	ResultSet rs = null;
@@ -35,6 +38,8 @@ public class PersonGenderIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSuppor
 			if(rs.hasNext()) {
 				QuerySolution sol = rs.nextSolution();
 				gender = sol.get("?s").toString();
+				firstInstance = true;
+				lastInstance = ! rs.hasNext();
 				return EVAL_BODY_INCLUDE;
 			}
 		} catch (Exception e) {
@@ -52,6 +57,8 @@ public class PersonGenderIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSuppor
 			if(rs.hasNext()) {
 				QuerySolution sol = rs.nextSolution();
 				gender = sol.get("?s").toString();
+				firstInstance = false;
+				lastInstance = ! rs.hasNext();
 				return EVAL_BODY_AGAIN;
 			}
 		} catch (Exception e) {
@@ -83,12 +90,28 @@ public class PersonGenderIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSuppor
 		subjectURI = null;
 	}
 
-	public void setGender(String gender) {
-		this.gender = gender;
+	public  void setGender(String theGender) {
+		gender = theGender;
 	}
 
-	public String getGender() {
+	public  String getGender() {
 		return gender;
+	}
+
+	public static void setFirstInstance(Boolean theFirstInstance) {
+		firstInstance = theFirstInstance;
+	}
+
+	public static Boolean getFirstInstance() {
+		return firstInstance;
+	}
+
+	public static void setLastInstance(Boolean theLastInstance) {
+		lastInstance = theLastInstance;
+	}
+
+	public static Boolean getLastInstance() {
+		return lastInstance;
 	}
 
 }

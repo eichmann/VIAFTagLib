@@ -14,6 +14,9 @@ public class PersonGivenNameIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSup
 	static PersonGivenNameIterator currentInstance = null;
 	private static final Log log = LogFactory.getLog(PersonGivenNameIterator.class);
 
+	static boolean firstInstance = false;
+	static boolean lastInstance = false;
+
 	String subjectURI = null;
 	String givenName = null;
 	ResultSet rs = null;
@@ -35,6 +38,8 @@ public class PersonGivenNameIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSup
 			if(rs.hasNext()) {
 				QuerySolution sol = rs.nextSolution();
 				givenName = sol.get("?s").toString();
+				firstInstance = true;
+				lastInstance = ! rs.hasNext();
 				return EVAL_BODY_INCLUDE;
 			}
 		} catch (Exception e) {
@@ -52,6 +57,8 @@ public class PersonGivenNameIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSup
 			if(rs.hasNext()) {
 				QuerySolution sol = rs.nextSolution();
 				givenName = sol.get("?s").toString();
+				firstInstance = false;
+				lastInstance = ! rs.hasNext();
 				return EVAL_BODY_AGAIN;
 			}
 		} catch (Exception e) {
@@ -83,12 +90,28 @@ public class PersonGivenNameIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSup
 		subjectURI = null;
 	}
 
-	public void setGivenName(String givenName) {
-		this.givenName = givenName;
+	public  void setGivenName(String theGivenName) {
+		givenName = theGivenName;
 	}
 
-	public String getGivenName() {
+	public  String getGivenName() {
 		return givenName;
+	}
+
+	public static void setFirstInstance(Boolean theFirstInstance) {
+		firstInstance = theFirstInstance;
+	}
+
+	public static Boolean getFirstInstance() {
+		return firstInstance;
+	}
+
+	public static void setLastInstance(Boolean theLastInstance) {
+		lastInstance = theLastInstance;
+	}
+
+	public static Boolean getLastInstance() {
+		return lastInstance;
 	}
 
 }

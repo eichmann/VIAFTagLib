@@ -14,6 +14,9 @@ public class CreativeWorkInLanguageIterator extends edu.uiowa.slis.VIAFTagLib.Ta
 	static CreativeWorkInLanguageIterator currentInstance = null;
 	private static final Log log = LogFactory.getLog(CreativeWorkInLanguageIterator.class);
 
+	static boolean firstInstance = false;
+	static boolean lastInstance = false;
+
 	String subjectURI = null;
 	String inLanguage = null;
 	ResultSet rs = null;
@@ -35,6 +38,8 @@ public class CreativeWorkInLanguageIterator extends edu.uiowa.slis.VIAFTagLib.Ta
 			if(rs.hasNext()) {
 				QuerySolution sol = rs.nextSolution();
 				inLanguage = sol.get("?s").toString();
+				firstInstance = true;
+				lastInstance = ! rs.hasNext();
 				return EVAL_BODY_INCLUDE;
 			}
 		} catch (Exception e) {
@@ -52,6 +57,8 @@ public class CreativeWorkInLanguageIterator extends edu.uiowa.slis.VIAFTagLib.Ta
 			if(rs.hasNext()) {
 				QuerySolution sol = rs.nextSolution();
 				inLanguage = sol.get("?s").toString();
+				firstInstance = false;
+				lastInstance = ! rs.hasNext();
 				return EVAL_BODY_AGAIN;
 			}
 		} catch (Exception e) {
@@ -83,12 +90,28 @@ public class CreativeWorkInLanguageIterator extends edu.uiowa.slis.VIAFTagLib.Ta
 		subjectURI = null;
 	}
 
-	public void setInLanguage(String inLanguage) {
-		this.inLanguage = inLanguage;
+	public  void setInLanguage(String theInLanguage) {
+		inLanguage = theInLanguage;
 	}
 
-	public String getInLanguage() {
+	public  String getInLanguage() {
 		return inLanguage;
+	}
+
+	public static void setFirstInstance(Boolean theFirstInstance) {
+		firstInstance = theFirstInstance;
+	}
+
+	public static Boolean getFirstInstance() {
+		return firstInstance;
+	}
+
+	public static void setLastInstance(Boolean theLastInstance) {
+		lastInstance = theLastInstance;
+	}
+
+	public static Boolean getLastInstance() {
+		return lastInstance;
 	}
 
 }

@@ -14,6 +14,9 @@ public class OrganizationSameAsIterator extends edu.uiowa.slis.VIAFTagLib.TagLib
 	static OrganizationSameAsIterator currentInstance = null;
 	private static final Log log = LogFactory.getLog(OrganizationSameAsIterator.class);
 
+	static boolean firstInstance = false;
+	static boolean lastInstance = false;
+
 	String subjectURI = null;
 	String sameAs = null;
 	ResultSet rs = null;
@@ -35,6 +38,8 @@ public class OrganizationSameAsIterator extends edu.uiowa.slis.VIAFTagLib.TagLib
 			if(rs.hasNext()) {
 				QuerySolution sol = rs.nextSolution();
 				sameAs = sol.get("?s").toString();
+				firstInstance = true;
+				lastInstance = ! rs.hasNext();
 				return EVAL_BODY_INCLUDE;
 			}
 		} catch (Exception e) {
@@ -52,6 +57,8 @@ public class OrganizationSameAsIterator extends edu.uiowa.slis.VIAFTagLib.TagLib
 			if(rs.hasNext()) {
 				QuerySolution sol = rs.nextSolution();
 				sameAs = sol.get("?s").toString();
+				firstInstance = false;
+				lastInstance = ! rs.hasNext();
 				return EVAL_BODY_AGAIN;
 			}
 		} catch (Exception e) {
@@ -83,12 +90,28 @@ public class OrganizationSameAsIterator extends edu.uiowa.slis.VIAFTagLib.TagLib
 		subjectURI = null;
 	}
 
-	public void setSameAs(String sameAs) {
-		this.sameAs = sameAs;
+	public  void setSameAs(String theSameAs) {
+		sameAs = theSameAs;
 	}
 
-	public String getSameAs() {
+	public  String getSameAs() {
 		return sameAs;
+	}
+
+	public static void setFirstInstance(Boolean theFirstInstance) {
+		firstInstance = theFirstInstance;
+	}
+
+	public static Boolean getFirstInstance() {
+		return firstInstance;
+	}
+
+	public static void setLastInstance(Boolean theLastInstance) {
+		lastInstance = theLastInstance;
+	}
+
+	public static Boolean getLastInstance() {
+		return lastInstance;
 	}
 
 }

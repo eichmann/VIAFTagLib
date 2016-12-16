@@ -14,6 +14,9 @@ public class PersonBirthDateIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSup
 	static PersonBirthDateIterator currentInstance = null;
 	private static final Log log = LogFactory.getLog(PersonBirthDateIterator.class);
 
+	static boolean firstInstance = false;
+	static boolean lastInstance = false;
+
 	String subjectURI = null;
 	String birthDate = null;
 	ResultSet rs = null;
@@ -35,6 +38,8 @@ public class PersonBirthDateIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSup
 			if(rs.hasNext()) {
 				QuerySolution sol = rs.nextSolution();
 				birthDate = sol.get("?s").toString();
+				firstInstance = true;
+				lastInstance = ! rs.hasNext();
 				return EVAL_BODY_INCLUDE;
 			}
 		} catch (Exception e) {
@@ -52,6 +57,8 @@ public class PersonBirthDateIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSup
 			if(rs.hasNext()) {
 				QuerySolution sol = rs.nextSolution();
 				birthDate = sol.get("?s").toString();
+				firstInstance = false;
+				lastInstance = ! rs.hasNext();
 				return EVAL_BODY_AGAIN;
 			}
 		} catch (Exception e) {
@@ -83,12 +90,28 @@ public class PersonBirthDateIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSup
 		subjectURI = null;
 	}
 
-	public void setBirthDate(String birthDate) {
-		this.birthDate = birthDate;
+	public  void setBirthDate(String theBirthDate) {
+		birthDate = theBirthDate;
 	}
 
-	public String getBirthDate() {
+	public  String getBirthDate() {
 		return birthDate;
+	}
+
+	public static void setFirstInstance(Boolean theFirstInstance) {
+		firstInstance = theFirstInstance;
+	}
+
+	public static Boolean getFirstInstance() {
+		return firstInstance;
+	}
+
+	public static void setLastInstance(Boolean theLastInstance) {
+		lastInstance = theLastInstance;
+	}
+
+	public static Boolean getLastInstance() {
+		return lastInstance;
 	}
 
 }

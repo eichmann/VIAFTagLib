@@ -14,6 +14,9 @@ public class CreativeWorkDateCreatedIterator extends edu.uiowa.slis.VIAFTagLib.T
 	static CreativeWorkDateCreatedIterator currentInstance = null;
 	private static final Log log = LogFactory.getLog(CreativeWorkDateCreatedIterator.class);
 
+	static boolean firstInstance = false;
+	static boolean lastInstance = false;
+
 	String subjectURI = null;
 	String dateCreated = null;
 	ResultSet rs = null;
@@ -35,6 +38,8 @@ public class CreativeWorkDateCreatedIterator extends edu.uiowa.slis.VIAFTagLib.T
 			if(rs.hasNext()) {
 				QuerySolution sol = rs.nextSolution();
 				dateCreated = sol.get("?s").toString();
+				firstInstance = true;
+				lastInstance = ! rs.hasNext();
 				return EVAL_BODY_INCLUDE;
 			}
 		} catch (Exception e) {
@@ -52,6 +57,8 @@ public class CreativeWorkDateCreatedIterator extends edu.uiowa.slis.VIAFTagLib.T
 			if(rs.hasNext()) {
 				QuerySolution sol = rs.nextSolution();
 				dateCreated = sol.get("?s").toString();
+				firstInstance = false;
+				lastInstance = ! rs.hasNext();
 				return EVAL_BODY_AGAIN;
 			}
 		} catch (Exception e) {
@@ -83,12 +90,28 @@ public class CreativeWorkDateCreatedIterator extends edu.uiowa.slis.VIAFTagLib.T
 		subjectURI = null;
 	}
 
-	public void setDateCreated(String dateCreated) {
-		this.dateCreated = dateCreated;
+	public  void setDateCreated(String theDateCreated) {
+		dateCreated = theDateCreated;
 	}
 
-	public String getDateCreated() {
+	public  String getDateCreated() {
 		return dateCreated;
+	}
+
+	public static void setFirstInstance(Boolean theFirstInstance) {
+		firstInstance = theFirstInstance;
+	}
+
+	public static Boolean getFirstInstance() {
+		return firstInstance;
+	}
+
+	public static void setLastInstance(Boolean theLastInstance) {
+		lastInstance = theLastInstance;
+	}
+
+	public static Boolean getLastInstance() {
+		return lastInstance;
 	}
 
 }

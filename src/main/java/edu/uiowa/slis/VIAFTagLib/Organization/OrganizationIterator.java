@@ -14,6 +14,9 @@ public class OrganizationIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSuppor
 	static OrganizationIterator currentInstance = null;
 	private static final Log log = LogFactory.getLog(OrganizationIterator.class);
 
+	static boolean firstInstance = false;
+	static boolean lastInstance = false;
+
 	String subjectURI = null;
 	String label = null;
 	ResultSet rs = null;
@@ -34,6 +37,8 @@ public class OrganizationIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSuppor
 				QuerySolution sol = rs.nextSolution();
 				subjectURI = sol.get("?s").toString();
 				label = sol.get("?lab") == null ? null : sol.get("?lab").asLiteral().getString();
+				firstInstance = true;
+				lastInstance = ! rs.hasNext();
 				return EVAL_BODY_INCLUDE;
 			}
 		} catch (Exception e) {
@@ -52,6 +57,8 @@ public class OrganizationIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSuppor
 				QuerySolution sol = rs.nextSolution();
 				subjectURI = sol.get("?s").toString();
 				label = sol.get("?lab") == null ? null : sol.get("?lab").toString();
+				firstInstance = false;
+				lastInstance = ! rs.hasNext();
 				return EVAL_BODY_AGAIN;
 			}
 		} catch (Exception e) {
@@ -84,20 +91,36 @@ public class OrganizationIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSuppor
 		label = null;
 	}
 
-	public void setSubjectURI(String subjectURI) {
-		this.subjectURI = subjectURI;
+	public  void setSubjectURI(String theSubjectURI) {
+		subjectURI = theSubjectURI;
 	}
 
-	public String getSubjectURI() {
+	public  String getSubjectURI() {
 		return subjectURI;
 	}
 
-	public void setLabel(String label) {
-		this.label = label;
+	public  void setLabel(String theLabel) {
+		label = theLabel;
 	}
 
-	public String getLabel() {
+	public  String getLabel() {
 		return label;
+	}
+
+	public static void setFirstInstance(Boolean theFirstInstance) {
+		firstInstance = theFirstInstance;
+	}
+
+	public static Boolean getFirstInstance() {
+		return firstInstance;
+	}
+
+	public static void setLastInstance(Boolean theLastInstance) {
+		lastInstance = theLastInstance;
+	}
+
+	public static Boolean getLastInstance() {
+		return lastInstance;
 	}
 
 }

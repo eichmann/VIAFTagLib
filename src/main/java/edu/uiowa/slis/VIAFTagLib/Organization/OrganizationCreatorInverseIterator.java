@@ -16,6 +16,9 @@ public class OrganizationCreatorInverseIterator extends edu.uiowa.slis.VIAFTagLi
 	static OrganizationCreatorInverseIterator currentInstance = null;
 	private static final Log log = LogFactory.getLog(OrganizationCreatorInverseIterator.class);
 
+	static boolean firstInstance = false;
+	static boolean lastInstance = false;
+
 	String subjectURI = null;
 	String type = null;
 	String creatorInverse = null;
@@ -52,6 +55,8 @@ public class OrganizationCreatorInverseIterator extends edu.uiowa.slis.VIAFTagLi
 					continue;
 				if (classFilter == null || (classFilter != null && type != null && classFilter.containsKey(type))) {
 					log.info("instance: " + creatorInverse + "	type: " + type);
+					firstInstance = true;
+					lastInstance = ! rs.hasNext();
 					return EVAL_BODY_INCLUDE;
 				}
 			}
@@ -75,6 +80,8 @@ public class OrganizationCreatorInverseIterator extends edu.uiowa.slis.VIAFTagLi
 					continue;
 				if (classFilter == null || (classFilter != null && type != null && classFilter.containsKey(type))) {
 					log.info("instance: " + creatorInverse + "	type: " + type);
+					firstInstance = false;
+					lastInstance = ! rs.hasNext();
 					return EVAL_BODY_AGAIN;
 				}
 			}
@@ -110,20 +117,36 @@ public class OrganizationCreatorInverseIterator extends edu.uiowa.slis.VIAFTagLi
 		classFilter = null;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public  void setType(String theType) {
+		type = theType;
 	}
 
-	public String getType() {
+	public  String getType() {
 		return type;
 	}
 
-	public void setCreatorInverse(String creatorInverse) {
-		this.creatorInverse = creatorInverse;
+	public  void setCreatorInverse(String theCreatorInverse) {
+		creatorInverse = theCreatorInverse;
 	}
 
-	public String getCreatorInverse() {
+	public  String getCreatorInverse() {
 		return creatorInverse;
+	}
+
+	public static void setFirstInstance(Boolean theFirstInstance) {
+		firstInstance = theFirstInstance;
+	}
+
+	public static Boolean getFirstInstance() {
+		return firstInstance;
+	}
+
+	public static void setLastInstance(Boolean theLastInstance) {
+		lastInstance = theLastInstance;
+	}
+
+	public static Boolean getLastInstance() {
+		return lastInstance;
 	}
 
 	public void setClassFilter(String filterString) {

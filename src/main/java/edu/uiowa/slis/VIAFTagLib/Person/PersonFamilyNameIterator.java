@@ -14,6 +14,9 @@ public class PersonFamilyNameIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSu
 	static PersonFamilyNameIterator currentInstance = null;
 	private static final Log log = LogFactory.getLog(PersonFamilyNameIterator.class);
 
+	static boolean firstInstance = false;
+	static boolean lastInstance = false;
+
 	String subjectURI = null;
 	String familyName = null;
 	ResultSet rs = null;
@@ -35,6 +38,8 @@ public class PersonFamilyNameIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSu
 			if(rs.hasNext()) {
 				QuerySolution sol = rs.nextSolution();
 				familyName = sol.get("?s").toString();
+				firstInstance = true;
+				lastInstance = ! rs.hasNext();
 				return EVAL_BODY_INCLUDE;
 			}
 		} catch (Exception e) {
@@ -52,6 +57,8 @@ public class PersonFamilyNameIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSu
 			if(rs.hasNext()) {
 				QuerySolution sol = rs.nextSolution();
 				familyName = sol.get("?s").toString();
+				firstInstance = false;
+				lastInstance = ! rs.hasNext();
 				return EVAL_BODY_AGAIN;
 			}
 		} catch (Exception e) {
@@ -83,12 +90,28 @@ public class PersonFamilyNameIterator extends edu.uiowa.slis.VIAFTagLib.TagLibSu
 		subjectURI = null;
 	}
 
-	public void setFamilyName(String familyName) {
-		this.familyName = familyName;
+	public  void setFamilyName(String theFamilyName) {
+		familyName = theFamilyName;
 	}
 
-	public String getFamilyName() {
+	public  String getFamilyName() {
 		return familyName;
+	}
+
+	public static void setFirstInstance(Boolean theFirstInstance) {
+		firstInstance = theFirstInstance;
+	}
+
+	public static Boolean getFirstInstance() {
+		return firstInstance;
+	}
+
+	public static void setLastInstance(Boolean theLastInstance) {
+		lastInstance = theLastInstance;
+	}
+
+	public static Boolean getLastInstance() {
+		return lastInstance;
 	}
 
 }
