@@ -41,20 +41,20 @@ public class CreativeWork extends edu.uiowa.slis.VIAFTagLib.TagLibSupport {
 				subjectURI = ((edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkExampleOfWorkIterator)this.getParent()).getExampleOfWork();
 			}
 
-			if (this.getParent() instanceof edu.uiowa.slis.VIAFTagLib.Organization.OrganizationAuthorInverseIterator) {
-				subjectURI = ((edu.uiowa.slis.VIAFTagLib.Organization.OrganizationAuthorInverseIterator)this.getParent()).getAuthorInverse();
-			}
-
-			if (this.getParent() instanceof edu.uiowa.slis.VIAFTagLib.Person.PersonAuthorInverseIterator) {
-				subjectURI = ((edu.uiowa.slis.VIAFTagLib.Person.PersonAuthorInverseIterator)this.getParent()).getAuthorInverse();
-			}
-
 			if (this.getParent() instanceof edu.uiowa.slis.VIAFTagLib.Organization.OrganizationCreatorInverseIterator) {
 				subjectURI = ((edu.uiowa.slis.VIAFTagLib.Organization.OrganizationCreatorInverseIterator)this.getParent()).getCreatorInverse();
 			}
 
 			if (this.getParent() instanceof edu.uiowa.slis.VIAFTagLib.Person.PersonCreatorInverseIterator) {
 				subjectURI = ((edu.uiowa.slis.VIAFTagLib.Person.PersonCreatorInverseIterator)this.getParent()).getCreatorInverse();
+			}
+
+			if (this.getParent() instanceof edu.uiowa.slis.VIAFTagLib.Organization.OrganizationAuthorInverseIterator) {
+				subjectURI = ((edu.uiowa.slis.VIAFTagLib.Organization.OrganizationAuthorInverseIterator)this.getParent()).getAuthorInverse();
+			}
+
+			if (this.getParent() instanceof edu.uiowa.slis.VIAFTagLib.Person.PersonAuthorInverseIterator) {
+				subjectURI = ((edu.uiowa.slis.VIAFTagLib.Person.PersonAuthorInverseIterator)this.getParent()).getAuthorInverse();
 			}
 
 			edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkWorkExampleIterator theCreativeWorkWorkExampleIterator = (edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkWorkExampleIterator) findAncestorWithClass(this, edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkWorkExampleIterator.class);

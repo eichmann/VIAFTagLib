@@ -33,330 +33,6 @@
 	</tag>
 
 	<tag>
-		<name>Organization</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.Organization</tag-class>
-		<body-content>JSP</body-content>
-
-		<attribute>
-			<name>subjectURI</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>foreachOrganization</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationIterator</tag-class>
-		<body-content>JSP</body-content>
-	</tag>
-
-	<function>
-		<name>isFirstOrganizationInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationIterator</function-class>
-		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
-	</function>
-
-	<function>
-		<name>isLastOrganizationInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationIterator</function-class>
-		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
-	</function>
-
-	<tag>
-		<name>OrganizationSubjectURI</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationSubjectURI</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>subjectURI</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>OrganizationLabel</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationLabel</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>label</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>foreachOrganizationAlternateNameIterator</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationAlternateNameIterator</tag-class>
-		<body-content>JSP</body-content>
-	</tag>
-
-	<function>
-		<name>isFirstOrganizationAlternateNameInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationAlternateNameIterator</function-class>
-		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
-	</function>
-
-	<function>
-		<name>isLastOrganizationAlternateNameInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationAlternateNameIterator</function-class>
-		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
-	</function>
-
-	<tag>
-		<name>OrganizationAlternateName</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationAlternateName</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>alternateName</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>foreachOrganizationSameAsIterator</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationSameAsIterator</tag-class>
-		<body-content>JSP</body-content>
-	</tag>
-
-	<function>
-		<name>isFirstOrganizationSameAsInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationSameAsIterator</function-class>
-		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
-	</function>
-
-	<function>
-		<name>isLastOrganizationSameAsInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationSameAsIterator</function-class>
-		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
-	</function>
-
-	<tag>
-		<name>OrganizationSameAs</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationSameAs</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>sameAs</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>foreachOrganizationAuthorInverseIterator</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationAuthorInverseIterator</tag-class>
-		<body-content>JSP</body-content>
-
-		<attribute>
-			<name>classFilter</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<function>
-		<name>isFirstOrganizationAuthorInverseInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationAuthorInverseIterator</function-class>
-		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
-	</function>
-
-	<function>
-		<name>isLastOrganizationAuthorInverseInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationAuthorInverseIterator</function-class>
-		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
-	</function>
-
-	<tag>
-		<name>OrganizationAuthorInverse</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationAuthorInverse</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>author</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>OrganizationAuthorInverseType</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationAuthorInverseType</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>type</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>foreachOrganizationCreatorInverseIterator</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationCreatorInverseIterator</tag-class>
-		<body-content>JSP</body-content>
-
-		<attribute>
-			<name>classFilter</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<function>
-		<name>isFirstOrganizationCreatorInverseInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationCreatorInverseIterator</function-class>
-		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
-	</function>
-
-	<function>
-		<name>isLastOrganizationCreatorInverseInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationCreatorInverseIterator</function-class>
-		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
-	</function>
-
-	<tag>
-		<name>OrganizationCreatorInverse</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationCreatorInverse</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>creator</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>OrganizationCreatorInverseType</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationCreatorInverseType</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>type</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>Place</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Place.Place</tag-class>
-		<body-content>JSP</body-content>
-
-		<attribute>
-			<name>subjectURI</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>foreachPlace</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceIterator</tag-class>
-		<body-content>JSP</body-content>
-	</tag>
-
-	<function>
-		<name>isFirstPlaceInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceIterator</function-class>
-		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
-	</function>
-
-	<function>
-		<name>isLastPlaceInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceIterator</function-class>
-		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
-	</function>
-
-	<tag>
-		<name>PlaceSubjectURI</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceSubjectURI</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>subjectURI</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>PlaceLabel</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceLabel</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>label</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>foreachPlaceAlternateNameIterator</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceAlternateNameIterator</tag-class>
-		<body-content>JSP</body-content>
-	</tag>
-
-	<function>
-		<name>isFirstPlaceAlternateNameInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceAlternateNameIterator</function-class>
-		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
-	</function>
-
-	<function>
-		<name>isLastPlaceAlternateNameInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceAlternateNameIterator</function-class>
-		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
-	</function>
-
-	<tag>
-		<name>PlaceAlternateName</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceAlternateName</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>alternateName</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>foreachPlaceSameAsIterator</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceSameAsIterator</tag-class>
-		<body-content>JSP</body-content>
-	</tag>
-
-	<function>
-		<name>isFirstPlaceSameAsInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceSameAsIterator</function-class>
-		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
-	</function>
-
-	<function>
-		<name>isLastPlaceSameAsInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceSameAsIterator</function-class>
-		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
-	</function>
-
-	<tag>
-		<name>PlaceSameAs</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceSameAs</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>sameAs</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
 		<name>Person</name>
 		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.Person</tag-class>
 		<body-content>JSP</body-content>
@@ -471,30 +147,30 @@
 	</tag>
 
 	<tag>
-		<name>foreachPersonFamilyNameIterator</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonFamilyNameIterator</tag-class>
+		<name>foreachPersonDeathDateIterator</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonDeathDateIterator</tag-class>
 		<body-content>JSP</body-content>
 	</tag>
 
 	<function>
-		<name>isFirstPersonFamilyNameInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Person.PersonFamilyNameIterator</function-class>
+		<name>isFirstPersonDeathDateInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Person.PersonDeathDateIterator</function-class>
 		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
 	</function>
 
 	<function>
-		<name>isLastPersonFamilyNameInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Person.PersonFamilyNameIterator</function-class>
+		<name>isLastPersonDeathDateInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Person.PersonDeathDateIterator</function-class>
 		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
 	</function>
 
 	<tag>
-		<name>PersonFamilyName</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonFamilyName</tag-class>
+		<name>PersonDeathDate</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonDeathDate</tag-class>
 		<body-content>empty</body-content>
 
 		<attribute>
-			<name>familyName</name>
+			<name>deathDate</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
@@ -531,60 +207,30 @@
 	</tag>
 
 	<tag>
-		<name>foreachPersonDeathDateIterator</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonDeathDateIterator</tag-class>
+		<name>foreachPersonFamilyNameIterator</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonFamilyNameIterator</tag-class>
 		<body-content>JSP</body-content>
 	</tag>
 
 	<function>
-		<name>isFirstPersonDeathDateInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Person.PersonDeathDateIterator</function-class>
+		<name>isFirstPersonFamilyNameInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Person.PersonFamilyNameIterator</function-class>
 		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
 	</function>
 
 	<function>
-		<name>isLastPersonDeathDateInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Person.PersonDeathDateIterator</function-class>
+		<name>isLastPersonFamilyNameInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Person.PersonFamilyNameIterator</function-class>
 		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
 	</function>
 
 	<tag>
-		<name>PersonDeathDate</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonDeathDate</tag-class>
+		<name>PersonFamilyName</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonFamilyName</tag-class>
 		<body-content>empty</body-content>
 
 		<attribute>
-			<name>deathDate</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>foreachPersonAlternateNameIterator</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonAlternateNameIterator</tag-class>
-		<body-content>JSP</body-content>
-	</tag>
-
-	<function>
-		<name>isFirstPersonAlternateNameInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Person.PersonAlternateNameIterator</function-class>
-		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
-	</function>
-
-	<function>
-		<name>isLastPersonAlternateNameInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Person.PersonAlternateNameIterator</function-class>
-		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
-	</function>
-
-	<tag>
-		<name>PersonAlternateName</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonAlternateName</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>alternateName</name>
+			<name>familyName</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
@@ -621,48 +267,30 @@
 	</tag>
 
 	<tag>
-		<name>foreachPersonAuthorInverseIterator</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonAuthorInverseIterator</tag-class>
+		<name>foreachPersonAlternateNameIterator</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonAlternateNameIterator</tag-class>
 		<body-content>JSP</body-content>
-
-		<attribute>
-			<name>classFilter</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
 	</tag>
 
 	<function>
-		<name>isFirstPersonAuthorInverseInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Person.PersonAuthorInverseIterator</function-class>
+		<name>isFirstPersonAlternateNameInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Person.PersonAlternateNameIterator</function-class>
 		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
 	</function>
 
 	<function>
-		<name>isLastPersonAuthorInverseInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.Person.PersonAuthorInverseIterator</function-class>
+		<name>isLastPersonAlternateNameInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Person.PersonAlternateNameIterator</function-class>
 		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
 	</function>
 
 	<tag>
-		<name>PersonAuthorInverse</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonAuthorInverse</tag-class>
+		<name>PersonAlternateName</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonAlternateName</tag-class>
 		<body-content>empty</body-content>
 
 		<attribute>
-			<name>author</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>PersonAuthorInverseType</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonAuthorInverseType</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>type</name>
+			<name>alternateName</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
@@ -707,6 +335,54 @@
 	<tag>
 		<name>PersonCreatorInverseType</name>
 		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonCreatorInverseType</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>foreachPersonAuthorInverseIterator</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonAuthorInverseIterator</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>classFilter</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<function>
+		<name>isFirstPersonAuthorInverseInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Person.PersonAuthorInverseIterator</function-class>
+		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
+	</function>
+
+	<function>
+		<name>isLastPersonAuthorInverseInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Person.PersonAuthorInverseIterator</function-class>
+		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
+	</function>
+
+	<tag>
+		<name>PersonAuthorInverse</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonAuthorInverse</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>author</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>PersonAuthorInverseType</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Person.PersonAuthorInverseType</tag-class>
 		<body-content>empty</body-content>
 
 		<attribute>
@@ -765,84 +441,6 @@
 
 		<attribute>
 			<name>label</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>foreachCreativeWorkInLanguageIterator</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkInLanguageIterator</tag-class>
-		<body-content>JSP</body-content>
-	</tag>
-
-	<function>
-		<name>isFirstCreativeWorkInLanguageInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkInLanguageIterator</function-class>
-		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
-	</function>
-
-	<function>
-		<name>isLastCreativeWorkInLanguageInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkInLanguageIterator</function-class>
-		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
-	</function>
-
-	<tag>
-		<name>CreativeWorkInLanguage</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkInLanguage</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>inLanguage</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>foreachCreativeWorkAuthorIterator</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthorIterator</tag-class>
-		<body-content>JSP</body-content>
-
-		<attribute>
-			<name>classFilter</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<function>
-		<name>isFirstCreativeWorkAuthorInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthorIterator</function-class>
-		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
-	</function>
-
-	<function>
-		<name>isLastCreativeWorkAuthorInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthorIterator</function-class>
-		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
-	</function>
-
-	<tag>
-		<name>CreativeWorkAuthor</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthor</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>author</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-	</tag>
-
-	<tag>
-		<name>CreativeWorkAuthorType</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthorType</tag-class>
-		<body-content>empty</body-content>
-
-		<attribute>
-			<name>type</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
@@ -945,6 +543,36 @@
 	</tag>
 
 	<tag>
+		<name>foreachCreativeWorkDateCreatedIterator</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkDateCreatedIterator</tag-class>
+		<body-content>JSP</body-content>
+	</tag>
+
+	<function>
+		<name>isFirstCreativeWorkDateCreatedInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkDateCreatedIterator</function-class>
+		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
+	</function>
+
+	<function>
+		<name>isLastCreativeWorkDateCreatedInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkDateCreatedIterator</function-class>
+		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
+	</function>
+
+	<tag>
+		<name>CreativeWorkDateCreated</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkDateCreated</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>dateCreated</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
 		<name>foreachCreativeWorkExampleOfWorkIterator</name>
 		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkExampleOfWorkIterator</tag-class>
 		<body-content>JSP</body-content>
@@ -993,60 +621,78 @@
 	</tag>
 
 	<tag>
-		<name>foreachCreativeWorkDateCreatedIterator</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkDateCreatedIterator</tag-class>
+		<name>foreachCreativeWorkAuthorIterator</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthorIterator</tag-class>
 		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>classFilter</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
 	</tag>
 
 	<function>
-		<name>isFirstCreativeWorkDateCreatedInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkDateCreatedIterator</function-class>
+		<name>isFirstCreativeWorkAuthorInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthorIterator</function-class>
 		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
 	</function>
 
 	<function>
-		<name>isLastCreativeWorkDateCreatedInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkDateCreatedIterator</function-class>
+		<name>isLastCreativeWorkAuthorInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthorIterator</function-class>
 		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
 	</function>
 
 	<tag>
-		<name>CreativeWorkDateCreated</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkDateCreated</tag-class>
+		<name>CreativeWorkAuthor</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthor</tag-class>
 		<body-content>empty</body-content>
 
 		<attribute>
-			<name>dateCreated</name>
+			<name>author</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 	</tag>
 
 	<tag>
-		<name>foreachCreativeWorkAlternateNameIterator</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAlternateNameIterator</tag-class>
+		<name>CreativeWorkAuthorType</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthorType</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>foreachCreativeWorkInLanguageIterator</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkInLanguageIterator</tag-class>
 		<body-content>JSP</body-content>
 	</tag>
 
 	<function>
-		<name>isFirstCreativeWorkAlternateNameInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAlternateNameIterator</function-class>
+		<name>isFirstCreativeWorkInLanguageInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkInLanguageIterator</function-class>
 		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
 	</function>
 
 	<function>
-		<name>isLastCreativeWorkAlternateNameInstance</name>
-		<function-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAlternateNameIterator</function-class>
+		<name>isLastCreativeWorkInLanguageInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkInLanguageIterator</function-class>
 		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
 	</function>
 
 	<tag>
-		<name>CreativeWorkAlternateName</name>
-		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAlternateName</tag-class>
+		<name>CreativeWorkInLanguage</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkInLanguage</tag-class>
 		<body-content>empty</body-content>
 
 		<attribute>
-			<name>alternateName</name>
+			<name>inLanguage</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
@@ -1077,6 +723,36 @@
 
 		<attribute>
 			<name>sameAs</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>foreachCreativeWorkAlternateNameIterator</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAlternateNameIterator</tag-class>
+		<body-content>JSP</body-content>
+	</tag>
+
+	<function>
+		<name>isFirstCreativeWorkAlternateNameInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAlternateNameIterator</function-class>
+		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
+	</function>
+
+	<function>
+		<name>isLastCreativeWorkAlternateNameInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAlternateNameIterator</function-class>
+		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
+	</function>
+
+	<tag>
+		<name>CreativeWorkAlternateName</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAlternateName</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>alternateName</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
@@ -1173,6 +849,330 @@
 
 		<attribute>
 			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>Organization</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.Organization</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>subjectURI</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>foreachOrganization</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationIterator</tag-class>
+		<body-content>JSP</body-content>
+	</tag>
+
+	<function>
+		<name>isFirstOrganizationInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationIterator</function-class>
+		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
+	</function>
+
+	<function>
+		<name>isLastOrganizationInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationIterator</function-class>
+		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
+	</function>
+
+	<tag>
+		<name>OrganizationSubjectURI</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationSubjectURI</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>subjectURI</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>OrganizationLabel</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationLabel</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>label</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>foreachOrganizationSameAsIterator</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationSameAsIterator</tag-class>
+		<body-content>JSP</body-content>
+	</tag>
+
+	<function>
+		<name>isFirstOrganizationSameAsInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationSameAsIterator</function-class>
+		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
+	</function>
+
+	<function>
+		<name>isLastOrganizationSameAsInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationSameAsIterator</function-class>
+		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
+	</function>
+
+	<tag>
+		<name>OrganizationSameAs</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationSameAs</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>sameAs</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>foreachOrganizationAlternateNameIterator</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationAlternateNameIterator</tag-class>
+		<body-content>JSP</body-content>
+	</tag>
+
+	<function>
+		<name>isFirstOrganizationAlternateNameInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationAlternateNameIterator</function-class>
+		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
+	</function>
+
+	<function>
+		<name>isLastOrganizationAlternateNameInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationAlternateNameIterator</function-class>
+		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
+	</function>
+
+	<tag>
+		<name>OrganizationAlternateName</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationAlternateName</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>alternateName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>foreachOrganizationCreatorInverseIterator</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationCreatorInverseIterator</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>classFilter</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<function>
+		<name>isFirstOrganizationCreatorInverseInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationCreatorInverseIterator</function-class>
+		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
+	</function>
+
+	<function>
+		<name>isLastOrganizationCreatorInverseInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationCreatorInverseIterator</function-class>
+		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
+	</function>
+
+	<tag>
+		<name>OrganizationCreatorInverse</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationCreatorInverse</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>creator</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>OrganizationCreatorInverseType</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationCreatorInverseType</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>foreachOrganizationAuthorInverseIterator</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationAuthorInverseIterator</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>classFilter</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<function>
+		<name>isFirstOrganizationAuthorInverseInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationAuthorInverseIterator</function-class>
+		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
+	</function>
+
+	<function>
+		<name>isLastOrganizationAuthorInverseInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationAuthorInverseIterator</function-class>
+		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
+	</function>
+
+	<tag>
+		<name>OrganizationAuthorInverse</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationAuthorInverse</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>author</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>OrganizationAuthorInverseType</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Organization.OrganizationAuthorInverseType</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>Place</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Place.Place</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>subjectURI</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>foreachPlace</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceIterator</tag-class>
+		<body-content>JSP</body-content>
+	</tag>
+
+	<function>
+		<name>isFirstPlaceInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceIterator</function-class>
+		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
+	</function>
+
+	<function>
+		<name>isLastPlaceInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceIterator</function-class>
+		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
+	</function>
+
+	<tag>
+		<name>PlaceSubjectURI</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceSubjectURI</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>subjectURI</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>PlaceLabel</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceLabel</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>label</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>foreachPlaceSameAsIterator</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceSameAsIterator</tag-class>
+		<body-content>JSP</body-content>
+	</tag>
+
+	<function>
+		<name>isFirstPlaceSameAsInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceSameAsIterator</function-class>
+		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
+	</function>
+
+	<function>
+		<name>isLastPlaceSameAsInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceSameAsIterator</function-class>
+		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
+	</function>
+
+	<tag>
+		<name>PlaceSameAs</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceSameAs</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>sameAs</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>foreachPlaceAlternateNameIterator</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceAlternateNameIterator</tag-class>
+		<body-content>JSP</body-content>
+	</tag>
+
+	<function>
+		<name>isFirstPlaceAlternateNameInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceAlternateNameIterator</function-class>
+		<function-signature>java.lang.Boolean getFirstInstance()</function-signature>
+	</function>
+
+	<function>
+		<name>isLastPlaceAlternateNameInstance</name>
+		<function-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceAlternateNameIterator</function-class>
+		<function-signature>java.lang.Boolean getLastInstance()</function-signature>
+	</function>
+
+	<tag>
+		<name>PlaceAlternateName</name>
+		<tag-class>edu.uiowa.slis.VIAFTagLib.Place.PlaceAlternateName</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>alternateName</name>
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>

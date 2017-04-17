@@ -3,8 +3,15 @@ package edu.uiowa.slis.VIAFTagLib.utility;
 import java.io.File;
 import java.io.IOException;
 
+import org.apache.jena.query.Dataset;
+import org.apache.jena.query.Query;
+import org.apache.jena.query.QueryExecution;
+import org.apache.jena.query.QueryExecutionFactory;
+import org.apache.jena.query.QueryFactory;
 import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
+import org.apache.jena.query.Syntax;
+import org.apache.jena.tdb.TDBFactory;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
@@ -21,6 +28,12 @@ public class Indexer {
     protected static Logger logger = Logger.getLogger(Indexer.class);
     static TagLibSupport theTag = new TagLibSupport();
     
+    static boolean useSPARQL = false;
+    static Dataset dataset = null;
+    static String tripleStore = null;
+    static String endpoint = null;
+
+    static String dataPath = "/Volumes/LD4L/";
     static String lucenePath = "/Volumes/LD4L/lucene/viaf/persons";
     static String prefix = 
 	    "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> "
@@ -36,16 +49,19 @@ public class Indexer {
     public static void main(String[] args) throws CorruptIndexException, LockObtainFailedException, IOException {
 	PropertyConfigurator.configure("log4j.info");
 
-	if (args.length > 0 && args[0].equals("work"))
-	    lucenePath = "/Volumes/LD4L/lucene/" + "viaf" + "/" + args[0];
-	if (args.length > 0 && args[0].equals("person"))
-	    lucenePath = "/Volumes/LD4L/lucene/" + "viaf" + "/" + args[0];
+	tripleStore = dataPath + args[0];
+	endpoint = "http://guardian.slis.uiowa.edu:3030/" + args[0] + "/sparql";
+
+	if (args.length > 0 && args[1].equals("work"))
+	    lucenePath = "/Volumes/LD4L/lucene/" + "viaf" + "/" + args[1];
+	if (args.length > 0 && args[1].equals("person"))
+	    lucenePath = "/Volumes/LD4L/lucene/" + "viaf" + "/" + args[1];
 
 	IndexWriter theWriter = new IndexWriter(FSDirectory.open(new File(lucenePath)), new StandardAnalyzer(org.apache.lucene.util.Version.LUCENE_30), true, IndexWriter.MaxFieldLength.UNLIMITED);
 
-	if (args.length > 0 && args[0].equals("work"))
+	if (args.length > 0 && args[1].equals("work"))
 	    indexWorkTitles(theWriter);
-	if (args.length > 0 && args[0].equals("person"))
+	if (args.length > 0 && args[1].equals("person"))
 	    indexPersons(theWriter);
 
 	logger.info("optimizing index...");
@@ -57,11 +73,10 @@ public class Indexer {
 	int count = 0;
 	String query =
 		"SELECT DISTINCT ?work ?title WHERE { "
-		+ "?work rdf:type bib:Work . "
-		+ "?work bib:hasTitle ?x . "
-		+ "?x rdfs:label ?title . "
-    		+ "} limit 5000000";
-	ResultSet rs = theTag.getResultSet(prefix + query);
+		+ "?work rdf:type <http://schema.org/CreativeWork> . "
+		+ "?work <http://schema.org/name> ?title . "
+    		+ "}";
+	ResultSet rs = getResultSet(prefix + query);
 	while (rs.hasNext()) {
 	    QuerySolution sol = rs.nextSolution();
 	    String work = sol.get("?work").toString();
@@ -88,7 +103,7 @@ public class Indexer {
 		+ "?uri rdf:type <http://schema.org/Person> . "
 		+ " FILTER (langMatches(lang(?name), 'en')) "
     		+ "} ";
-	ResultSet rs = theTag.getResultSet(prefix + query);
+	ResultSet rs = getResultSet(prefix + query);
 	while (rs.hasNext()) {
 	    QuerySolution sol = rs.nextSolution();
 //	    String authorityURI = sol.get("?uri").toString();
@@ -108,4 +123,16 @@ public class Indexer {
 	logger.info("total titles: " + count);
     }
 
+    static public ResultSet getResultSet(String queryString) {
+	if (useSPARQL) {
+	    Query theClassQuery = QueryFactory.create(queryString, Syntax.syntaxARQ);
+	    QueryExecution theClassExecution = QueryExecutionFactory.sparqlService(endpoint, theClassQuery);
+	    return theClassExecution.execSelect();
+	} else {
+	    dataset = TDBFactory.createDataset(tripleStore);
+	    Query query = QueryFactory.create(queryString, Syntax.syntaxARQ);
+	    QueryExecution qexec = QueryExecutionFactory.create(query, dataset);
+	    return qexec.execSelect();
+	}
+    }
 }

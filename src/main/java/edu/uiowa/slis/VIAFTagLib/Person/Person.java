@@ -33,24 +33,24 @@ public class Person extends edu.uiowa.slis.VIAFTagLib.TagLibSupport {
 				label = thePersonIterator.getLabel();
 			}
 
-			if (this.getParent() instanceof edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthorIterator) {
-				subjectURI = ((edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthorIterator)this.getParent()).getAuthor();
-			}
-
 			if (this.getParent() instanceof edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkCreatorIterator) {
 				subjectURI = ((edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkCreatorIterator)this.getParent()).getCreator();
 			}
 
-			edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthorIterator theCreativeWorkAuthorIterator = (edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthorIterator) findAncestorWithClass(this, edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthorIterator.class);
-
-			if (subjectURI == null && theCreativeWorkAuthorIterator != null) {
-				subjectURI = theCreativeWorkAuthorIterator.getAuthor();
+			if (this.getParent() instanceof edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthorIterator) {
+				subjectURI = ((edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthorIterator)this.getParent()).getAuthor();
 			}
 
 			edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkCreatorIterator theCreativeWorkCreatorIterator = (edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkCreatorIterator) findAncestorWithClass(this, edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkCreatorIterator.class);
 
 			if (subjectURI == null && theCreativeWorkCreatorIterator != null) {
 				subjectURI = theCreativeWorkCreatorIterator.getCreator();
+			}
+
+			edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthorIterator theCreativeWorkAuthorIterator = (edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthorIterator) findAncestorWithClass(this, edu.uiowa.slis.VIAFTagLib.CreativeWork.CreativeWorkAuthorIterator.class);
+
+			if (subjectURI == null && theCreativeWorkAuthorIterator != null) {
+				subjectURI = theCreativeWorkAuthorIterator.getAuthor();
 			}
 
 			if (thePersonIterator == null && subjectURI == null) {
