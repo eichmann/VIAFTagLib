@@ -56,6 +56,10 @@ public class Indexer {
 	    lucenePath = "/Volumes/LD4L/lucene/" + "viaf" + "/" + args[1];
 	if (args.length > 0 && args[1].equals("person"))
 	    lucenePath = "/Volumes/LD4L/lucene/" + "viaf" + "/" + args[1];
+	if (args.length > 0 && args[1].equals("organization"))
+	    lucenePath = "/Volumes/LD4L/lucene/" + "viaf" + "/" + args[1];
+	if (args.length > 0 && args[1].equals("place"))
+	    lucenePath = "/Volumes/LD4L/lucene/" + "viaf" + "/" + args[1];
 
 	IndexWriter theWriter = new IndexWriter(FSDirectory.open(new File(lucenePath)), new StandardAnalyzer(org.apache.lucene.util.Version.LUCENE_30), true, IndexWriter.MaxFieldLength.UNLIMITED);
 
@@ -63,6 +67,10 @@ public class Indexer {
 	    indexWorkTitles(theWriter);
 	if (args.length > 0 && args[1].equals("person"))
 	    indexPersons(theWriter);
+	if (args.length > 0 && args[1].equals("organization"))
+	    indexOrganizations(theWriter);
+	if (args.length > 0 && args[1].equals("place"))
+	    indexPlaces(theWriter);
 
 	logger.info("optimizing index...");
 	theWriter.optimize();
@@ -85,6 +93,58 @@ public class Indexer {
 	    
 	    Document theDocument = new Document();
 	    theDocument.add(new Field("uri", work, Field.Store.YES, Field.Index.NOT_ANALYZED));
+	    theDocument.add(new Field("title", title, Field.Store.YES, Field.Index.NOT_ANALYZED));
+	    theDocument.add(new Field("content", title, Field.Store.NO, Field.Index.ANALYZED));
+	    theWriter.addDocument(theDocument);
+	    count++;
+	    if (count % 10000 == 0)
+		logger.info("count: " + count);
+	}
+	logger.info("total titles: " + count);
+    }
+    
+    static void indexOrganizations(IndexWriter theWriter) throws CorruptIndexException, IOException {
+	int count = 0;
+	String query =
+		"SELECT DISTINCT ?organization ?title WHERE { "
+		+ "?organization rdf:type <http://schema.org/Organization> . "
+		+ "?organization <http://schema.org/name> ?title . "
+    		+ "}";
+	ResultSet rs = getResultSet(prefix + query);
+	while (rs.hasNext()) {
+	    QuerySolution sol = rs.nextSolution();
+	    String organization = sol.get("?organization").toString();
+	    String title = sol.get("?title").toString();
+	    logger.info("organization: " + organization + "\ttitle: " + title);
+	    
+	    Document theDocument = new Document();
+	    theDocument.add(new Field("uri", organization, Field.Store.YES, Field.Index.NOT_ANALYZED));
+	    theDocument.add(new Field("title", title, Field.Store.YES, Field.Index.NOT_ANALYZED));
+	    theDocument.add(new Field("content", title, Field.Store.NO, Field.Index.ANALYZED));
+	    theWriter.addDocument(theDocument);
+	    count++;
+	    if (count % 10000 == 0)
+		logger.info("count: " + count);
+	}
+	logger.info("total titles: " + count);
+    }
+    
+    static void indexPlaces(IndexWriter theWriter) throws CorruptIndexException, IOException {
+	int count = 0;
+	String query =
+		"SELECT DISTINCT ?place ?title WHERE { "
+		+ "?place rdf:type <http://schema.org/Place> . "
+		+ "?place <http://schema.org/name> ?title . "
+    		+ "}";
+	ResultSet rs = getResultSet(prefix + query);
+	while (rs.hasNext()) {
+	    QuerySolution sol = rs.nextSolution();
+	    String place = sol.get("?place").toString();
+	    String title = sol.get("?title").toString();
+	    logger.info("palce: " + place + "\ttitle: " + title);
+	    
+	    Document theDocument = new Document();
+	    theDocument.add(new Field("uri", place, Field.Store.YES, Field.Index.NOT_ANALYZED));
 	    theDocument.add(new Field("title", title, Field.Store.YES, Field.Index.NOT_ANALYZED));
 	    theDocument.add(new Field("content", title, Field.Store.NO, Field.Index.ANALYZED));
 	    theWriter.addDocument(theDocument);
