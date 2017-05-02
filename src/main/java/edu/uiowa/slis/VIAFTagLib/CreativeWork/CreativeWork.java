@@ -22,6 +22,8 @@ public class CreativeWork extends edu.uiowa.slis.VIAFTagLib.TagLibSupport {
 
 	// functional datatype properties, both local and inherited
 
+	String sameAs = null;
+	String alternateName = null;
 
 	public int doStartTag() throws JspException {
 		currentInstance = this;
@@ -142,6 +144,22 @@ public class CreativeWork extends edu.uiowa.slis.VIAFTagLib.TagLibSupport {
 
 	public  String getLabel() {
 		return label;
+	}
+
+	public  void setSameAs(String theSameAs) {
+		sameAs = theSameAs;
+	}
+
+	public  String getSameAs() {
+		return sameAs;
+	}
+
+	public  void setAlternateName(String theAlternateName) {
+		alternateName = theAlternateName;
+	}
+
+	public  String getAlternateName() {
+		return alternateName;
 	}
 
 }

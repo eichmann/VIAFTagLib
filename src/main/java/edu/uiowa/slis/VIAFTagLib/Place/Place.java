@@ -19,6 +19,8 @@ public class Place extends edu.uiowa.slis.VIAFTagLib.TagLibSupport {
 	String subjectURI = null;
 	String label = null;
 	boolean commitNeeded = false;
+	String sameAs = null;
+	String alternateName = null;
 
 	public int doStartTag() throws JspException {
 		currentInstance = this;
@@ -113,6 +115,22 @@ public class Place extends edu.uiowa.slis.VIAFTagLib.TagLibSupport {
 
 	public  String getLabel() {
 		return label;
+	}
+
+	public  void setSameAs(String theSameAs) {
+		sameAs = theSameAs;
+	}
+
+	public  String getSameAs() {
+		return sameAs;
+	}
+
+	public  void setAlternateName(String theAlternateName) {
+		alternateName = theAlternateName;
+	}
+
+	public  String getAlternateName() {
+		return alternateName;
 	}
 
 }
